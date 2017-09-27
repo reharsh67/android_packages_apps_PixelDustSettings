@@ -3,6 +3,7 @@ package com.pixeldust.settings.fragments;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -11,6 +12,7 @@ import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -47,6 +49,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mDateFontSize;
     private SwitchPreference mLavaLamp;
 
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+
+    private FingerprintManager mFingerprintManager;
+    private SwitchPreference mFingerprintVib;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -67,6 +74,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFaceUnlock.setEnabled(false);
             mFaceUnlock.setSummary(getActivity().getString(
                     R.string.face_auto_unlock_not_available));
+        }
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources resources = getResources();
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
+        if (mFingerprintManager == null){
+            prefScreen.removePreference(mFingerprintVib);
         }
 
         // Lockscren Clock Fonts

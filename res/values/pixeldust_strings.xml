@@ -97,4 +97,7 @@
     <string name="double_tap_sleep_anywhere_title">Lockscreen double tap to sleep</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
 
+    <!-- Volume settings -->
+    <string name="hardware_keys_vol_key_title">Volume button</string>
+
 </resources>

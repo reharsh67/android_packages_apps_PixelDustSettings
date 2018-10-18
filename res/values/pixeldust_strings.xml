@@ -89,7 +89,6 @@
 
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel navbar animation</string>
-    <string name="pixel_navbar_anim_summary">Requires a config change (display size, navbar position, reboot) themes may overwrite</string>
 
     <!-- Statusbar double tap to sleep -->
     <string name="double_tap_to_sleep_title">Status bar double tap to sleep</string>

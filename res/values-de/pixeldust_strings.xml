@@ -519,4 +519,8 @@
     <!-- Summary for the new device identifier access restrictions -->
     <string name="device_identifier_access_restrictions_summary">Diese Option ermöglicht es die neuen Zugriffsbeschränkungen in Android 10 für Gerätekennungen aufzuheben. Einige Apps benötigen dies, da sie noch nicht kompatibel sind.</string>
 
+    <!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel Animation</string>
+    <string name="pixel_navbar_anim_summary">Animation der Home-Taste aktivieren</string>
+
 </resources>

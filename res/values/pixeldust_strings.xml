@@ -320,4 +320,10 @@
     <string name="smartbar_longpress_delay_long">Long delay</string>
     <string name="smartbar_custom_icon_size_title">Custom icon scaling</string>
 
+    <!-- Lockscreen Weather -->
+    <string name="lockscreen_weather_category">Weather</string>
+    <string name="weather_unit">Temperature unit</string>
+    <string name="weather_unit_metric" translatable="false">Celsius</string>
+    <string name="weather_unit_imperial" translatable="false">Fahrenheit</string>
+
 </resources>

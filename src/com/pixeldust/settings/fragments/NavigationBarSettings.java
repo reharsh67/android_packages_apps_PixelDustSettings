@@ -40,7 +40,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_WIDTH = "navbar_width";
     private static final String KEY_CATEGORY_NAVIGATION_INTERFACE = "category_navbar_interface";
     private static final String KEY_CATEGORY_NAVIGATION_GENERAL = "category_navbar_general";
-    private static final String KEY_STOCK_NAVBAR_SETTINGS = "stock_settings";
+    private static final String KEY_STOCKNAVBAR_SETTINGS = "stocknavbar_settings";
     private static final String KEY_SMARTBAR_SETTINGS = "smartbar_settings";
     private static final String KEY_FLING_NAVBAR_SETTINGS = "fling_settings";
 
@@ -76,9 +76,9 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         int mode = Settings.Secure.getIntForUser(getContentResolver(), Settings.Secure.NAVIGATION_BAR_MODE,
                     0, UserHandle.USER_CURRENT);
 
-        mStockSettings = (Preference) findPreference(KEY_STOCK_NAVBAR_SETTINGS);
-        mFlingSettings = (Preference) findPreference(KEY_FLING_NAVBAR_SETTINGS);
+        mStockSettings = (Preference) findPreference(KEY_STOCKNAVBAR_SETTINGS);
         mSmartbarSettings = (Preference) findPreference(KEY_SMARTBAR_SETTINGS);
+        mFlingSettings = (Preference) findPreference(KEY_FLING_NAVBAR_SETTINGS);
         mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
 
         updateBarModeSettings(mode);
@@ -155,6 +155,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
                 mSmartbarSettings.setSelectable(true);
                 mFlingSettings.setEnabled(false);
                 mFlingSettings.setSelectable(false);
+                Settings.Secure.putInt(getContentResolver(),
+	            Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+                Settings.System.putInt(getContentResolver(),
+	            Settings.System.FULL_GESTURE_NAVBAR, 0);
                 break;
             case 2:
                 mStockSettings.setEnabled(false);
@@ -163,6 +167,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
                 mSmartbarSettings.setSelectable(false);
                 mFlingSettings.setEnabled(true);
                 mFlingSettings.setSelectable(true);
+                Settings.Secure.putInt(getContentResolver(),
+	            Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+                Settings.System.putInt(getContentResolver(),
+	            Settings.System.FULL_GESTURE_NAVBAR, 0);
                 break;
         }
     }

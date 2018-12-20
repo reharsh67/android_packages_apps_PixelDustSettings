@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The PixelDust Project
+<!-- Copyright (C) 2017-2020 The PixelDust Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,5 +17,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="alternative_recents_category"
+        android:title="@string/alternative_recents_category">
+
+    <Preference
+        android:key="swipe_up_enabled_warning"
+        android:selectable="false"
+        android:summary="@string/alternative_recents_swipe_up_enabled_warning_summary" />
+
+    <com.pixeldust.settings.preferences.SystemSettingMasterSwitchPreference
+        android:key="use_slim_recents"
+        android:fragment="com.pixeldust.settings.fragments.SlimRecents"
+        android:title="@string/slim_recents_fragment_title"
+        android:summary="@string/slim_recents_fragment_summary"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

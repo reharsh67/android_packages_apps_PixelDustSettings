@@ -25,6 +25,18 @@
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
     </Preference>
 
+    <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:defaultValue="true" />
+
+    <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_info"
+        android:title="@string/lockscreen_info_title"
+        android:summary="@string/lockscreen_info_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory
         android:key="lockscreen_weather"
         android:title="@string/lockscreen_weather_category" />
@@ -36,6 +48,7 @@
             android:summary="%s"
             android:entries="@array/weather_unit_entries"
             android:entryValues="@array/weather_unit_values"
+            android:dependency="lockscreen_info"
             android:defaultValue="@*android:integer/weather_lockscreen_default_unit" />
 
 </PreferenceScreen>

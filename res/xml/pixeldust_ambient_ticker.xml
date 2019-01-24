@@ -19,8 +19,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/force_ambient_for_media_pref_title">
 
+    <!-- Illustration for Ambient Ticker -->
+    <Preference android:key="ambient_ticker_illustration"
+        android:enabled="false"
+        android:layout="@layout/ambient_ticker_illustration" />
+
     <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
         android:key="force_ambient_for_media"
         android:title="@string/force_ambient_for_media_title"
         android:defaultValue="true" />
+
 </PreferenceScreen>

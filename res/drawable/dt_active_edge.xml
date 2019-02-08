@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M6.8693,0.8661C10.231,0.8522 13.5926,0.8641 16.9542,0.8601C17.4904,0.8443 18.0355,1.0484 18.3923,1.4547C18.7034,1.7927 18.861,2.2506 18.8581,2.7064C18.861,8.7776 18.8581,14.8478 18.86,20.918C18.867,21.3411 18.864,21.7901 18.6519,22.1706C18.3506,22.7722 17.6886,23.1528 17.0187,23.1399C13.6719,23.1409 10.3251,23.1419 6.9783,23.1389C6.4481,23.1438 5.9179,22.9199 5.576,22.5116C5.2827,22.1786 5.139,21.7356 5.14,21.2955C5.137,15.1837 5.14,9.0719 5.139,2.9601C5.135,2.6509 5.1409,2.3338 5.2529,2.0405C5.4888,1.3695 6.1578,0.8829 6.8693,0.8661ZM7.5026,2.309C6.8664,2.4716 6.4075,3.1048 6.4313,3.7579C6.4293,9.2523 6.4303,14.7457 6.4313,20.2401C6.4154,20.7822 6.7177,21.3203 7.2013,21.572C7.4729,21.7257 7.791,21.7544 8.0972,21.7485C10.7612,21.7455 13.4251,21.7504 16.0901,21.7465C16.649,21.7554 17.1941,21.4174 17.426,20.908C17.5964,20.5661 17.5667,20.1776 17.5677,19.808C17.5657,14.4385 17.5727,9.068 17.5647,3.6985C17.5746,2.9364 16.9037,2.2565 16.1416,2.2565C13.4608,2.2476 10.78,2.2565 8.1002,2.2525C7.9,2.2525 7.6959,2.2565 7.5026,2.309ZM21.6845,20.2024L20.4259,18.9438C19.1326,14.4424 19.1375,9.8142 20.4259,5.0602L21.6845,3.8006C20.1395,9.1948 20.1335,14.6615 21.6845,20.2024ZM3.3353,11.9529C3.3402,9.1839 3.0102,6.4665 2.3531,3.7986L3.6118,5.0582C4.7901,9.5427 4.807,14.1689 3.6118,18.9418L2.3531,20.2004C2.9983,17.4334 3.3224,14.716 3.3343,12.0461L0.2838,13.5713L0.2838,10.4277L3.3353,11.9529ZM20.5716,12.0015L23.7162,10.4297L23.7162,13.5743L20.5716,12.0015Z"
+      android:fillColor="#ffffff"/>
+</vector>

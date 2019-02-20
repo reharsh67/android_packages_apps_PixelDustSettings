@@ -613,6 +613,7 @@
         <item>@string/action_medianext_action</item>
         <item>@string/action_mediaplay_action</item>
         <item>@string/action_ringer_modes</item>
+        <item>@string/action_power_button</item>
     </string-array>
 
     <string-array name="active_edge_actions_values" translatable="false">
@@ -634,6 +635,7 @@
         <item>15</item>
         <item>16</item>
         <item>17</item>
+        <item>18</item>
     </string-array>
 
 </resources>

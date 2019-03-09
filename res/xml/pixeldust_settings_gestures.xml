@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <Preference
-        android:key="active_edge_category"
+        android:key="active_edge"
         android:icon="@drawable/dt_active_edge"
         android:title="@string/active_edge_title"
         android:summary="@string/active_edge_summary"

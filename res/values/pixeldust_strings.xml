@@ -782,8 +782,8 @@
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
 
     <!-- Active edge -->
-    <string name="active_edge_title">Active Edge</string>
-    <string name="active_edge_summary">Configure Active Edge options, does not yet work with Smartbar or Fling</string>
+    <string name="active_edge_title">An advanced version of the Pixel squeeze feature</string>
+    <string name="active_edge_summary">Configure squeeze actions, does not yet work with Smartbar or Fling</string>
     <string name="active_edge_short_actions_title">Short squeeze action</string>
     <string name="active_edge_long_actions_title">Long squeeze action</string>
     <string name="active_edge_sensitivity_title">Squeeze sensitivity</string>

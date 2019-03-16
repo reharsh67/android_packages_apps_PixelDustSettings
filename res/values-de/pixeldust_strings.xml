@@ -531,4 +531,8 @@
     <string name="gesture_navbar_handle_middle">Mittlere Pille</string>
     <string name="gesture_navbar_handle_large">Große Pille</string>
 
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Ambient-Equalizer</string>
+    <string name="ambient_visualizer_summary">Es werden weiße Equalizerbalken auf dem Ambient Display angezeigt, sofern keine benutzerdefinierte Farbe ausgewählt wurde.</string>
+
 </resources>

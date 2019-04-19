@@ -38,6 +38,13 @@
         android:entryValues="@array/lockscreen_clock_selection_values"
         android:defaultValue="0" />
 
+    <com.pixeldust.settings.preferences.SystemSettingListPreference
+        android:key="lockscreen_text_clock_align"
+        android:title="@string/lockscreen_clock_align_title"
+        android:entries="@array/lockscreen_clock_align_entries"
+        android:entryValues="@array/lockscreen_clock_align_values"
+        android:defaultValue="0" />
+
     <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_info"
         android:title="@string/lockscreen_info_title"

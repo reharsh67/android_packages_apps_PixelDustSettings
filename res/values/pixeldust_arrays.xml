@@ -139,9 +139,9 @@
         <item>@string/lockscreen_clock_selection_sammy</item>
         <item>@string/lockscreen_clock_selection_sammy_bold</item>
         <item>@string/lockscreen_clock_selection_sammy_accent</item>
+        <item>@string/lockscreen_clock_selection_sammy_accent_bold</item>
         <item>@string/lockscreen_clock_selection_sammy_accent_alt</item>
-        <item>@string/lockscreen_clock_selection_gradient_full</item>
-        <item>@string/lockscreen_clock_selection_gradient_likeqs</item>
+        <item>@string/lockscreen_clock_selection_sammy_accent_alt_bold</item>
 	<item>@string/lockscreen_clock_selection_text</item>
     </string-array>
 

@@ -750,4 +750,10 @@
     <string name="gaming_mode_dynamic_summary">Try detecting and adding gaming apps automatically</string>
     <string name="perf_cat_title">Performance</string>
 
+    <!-- Lockscreen Date styles -->
+    <string name="lockscreen_date_selection_title">Date style</string>
+    <string name="lockscreen_date_selection_default">Default</string>
+    <string name="lockscreen_date_selection_str_box">Semi-transparent box</string>
+    <string name="lockscreen_date_selection_str_round">Semi-transparent box (round)</string>
+
 </resources>

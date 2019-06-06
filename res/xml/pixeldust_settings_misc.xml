@@ -42,4 +42,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="perf_cat"
+        android:title="@string/perf_cat_title" >
+
+    <Preference
+        android:key="gaming_mode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary"
+        android:fragment="com.pixeldust.settings.fragments.GamingMode" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

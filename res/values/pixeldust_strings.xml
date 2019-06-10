@@ -660,6 +660,11 @@
     <string name="qs_tile_style_oreo">Default (Oreo)</string>
     <string name="qs_tile_style_oreo_circle_trim">Circle Trim (Oreo)</string>
     <string name="qs_tile_style_oreo_squircle_trim">Squircle Trim (Oreo)</string>
+    <string name="qs_tile_style_neonlike">Neon Light</string>
+    <string name="qs_tile_style_oos">Oxygen</string>
+    <string name="qs_tile_style_triangles">Triangles</string>
+    <string name="qs_tile_style_divided">Divided Circle</string>
+    <string name="qs_tile_style_cosmos">Cosmos</string>
     <string name="theme_accent_picker_default">Default</string>
 
     <!-- Lockscreen cover art filter -->

@@ -136,6 +136,21 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         LinearLayout oreosquircletrim = mView.findViewById(R.id.QsTileStyleSquircletrimOreo);
         setLayout("18", oreosquircletrim);
 
+        LinearLayout neonlike = mView.findViewById(R.id.QsTileStyleNeonLike);
+        setLayout("19", neonlike);
+
+        LinearLayout oxygen = mView.findViewById(R.id.QsTileStyleOOS);
+        setLayout("20", oxygen);
+
+        LinearLayout triangles = mView.findViewById(R.id.QsTileStyleTriangles);
+        setLayout("21", triangles);
+
+        LinearLayout divided = mView.findViewById(R.id.QsTileStyleDivided);
+        setLayout("22", divided);
+
+        LinearLayout cosmos = mView.findViewById(R.id.QsTileStyleCosmos);
+        setLayout("23", cosmos);
+
     }
 
     @Override
@@ -201,6 +216,11 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         LinearLayout oreo = mView.findViewById(R.id.QsTileStyleOreo);
         LinearLayout oreocircletrim = mView.findViewById(R.id.QsTileStyleCircletrimOreo);
         LinearLayout oreosquircletrim = mView.findViewById(R.id.QsTileStyleSquircletrimOreo);
+        LinearLayout neonlike = mView.findViewById(R.id.QsTileStyleNeonLike);
+        LinearLayout oxygen = mView.findViewById(R.id.QsTileStyleOOS);
+        LinearLayout triangles = mView.findViewById(R.id.QsTileStyleTriangles);
+        LinearLayout divided = mView.findViewById(R.id.QsTileStyleDivided);
+        LinearLayout cosmos = mView.findViewById(R.id.QsTileStyleCosmos);
 
         if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 1 )) {
             setAlphaForAll(res);
@@ -256,6 +276,21 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         } else if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 18 )) {
             setAlphaForAll(res);
             oreosquircletrim.setAlpha((float) 1.0);
+        } else if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 19 )) {
+            setAlphaForAll(res);
+            neonlike.setAlpha((float) 1.0);
+        } else if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 20 )) {
+            setAlphaForAll(res);
+            oxygen.setAlpha((float) 1.0);
+        } else if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 21 )) {
+            setAlphaForAll(res);
+            triangles.setAlpha((float) 1.0);
+        } else if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 22 )) {
+            setAlphaForAll(res);
+            divided.setAlpha((float) 1.0);
+        } else if (PixeldustUtils.isUsingQsTileStyles(mOverlayManager, mCurrentUserId, 23 )) {
+            setAlphaForAll(res);
+            cosmos.setAlpha((float) 1.0);
         } else {
             square.setAlpha((float) 1.0);
             roundedsquare.setAlpha((float) 1.0);
@@ -275,6 +310,11 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
             oreo.setAlpha((float) 1.0);
             oreocircletrim.setAlpha((float) 1.0);
             oreosquircletrim.setAlpha((float) 1.0);
+            neonlike.setAlpha((float) 1.0);
+            oxygen.setAlpha((float) 1.0);
+            triangles.setAlpha((float) 1.0);
+            divided.setAlpha((float) 1.0);
+            cosmos.setAlpha((float) 1.0);
         }
     }
 
@@ -297,6 +337,11 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         LinearLayout oreo = mView.findViewById(R.id.QsTileStyleOreo);
         LinearLayout oreocircletrim = mView.findViewById(R.id.QsTileStyleCircletrimOreo);
         LinearLayout oreosquircletrim = mView.findViewById(R.id.QsTileStyleSquircletrimOreo);
+        LinearLayout neonlike = mView.findViewById(R.id.QsTileStyleNeonLike);
+        LinearLayout oxygen = mView.findViewById(R.id.QsTileStyleOOS);
+        LinearLayout triangles = mView.findViewById(R.id.QsTileStyleTriangles);
+        LinearLayout divided = mView.findViewById(R.id.QsTileStyleDivided);
+        LinearLayout cosmos = mView.findViewById(R.id.QsTileStyleCosmos);
 
         TypedValue typedValue = new TypedValue();
         res.getValue(R.dimen.qs_styles_layout_opacity, typedValue, true);
@@ -320,5 +365,10 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         oreo.setAlpha(mLayoutOpacity);
         oreocircletrim.setAlpha(mLayoutOpacity);
         oreosquircletrim.setAlpha(mLayoutOpacity);
+        neonlike.setAlpha(mLayoutOpacity);
+        oxygen.setAlpha(mLayoutOpacity);
+        triangles.setAlpha(mLayoutOpacity);
+        divided.setAlpha(mLayoutOpacity);
+        cosmos.setAlpha(mLayoutOpacity);
     }
 }

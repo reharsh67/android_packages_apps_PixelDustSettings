@@ -67,6 +67,11 @@
                 <include layout="@layout/qs_styles_oreo" />
                 <include layout="@layout/qs_styles_circletrim_oreo" />
                 <include layout="@layout/qs_styles_squircletrim_oreo" />
+                <include layout="@layout/qs_styles_neonlike" />
+                <include layout="@layout/qs_styles_oos" />
+                <include layout="@layout/qs_styles_triangles" />
+                <include layout="@layout/qs_styles_divided" />
+                <include layout="@layout/qs_styles_cosmos" />
 
             </GridLayout>
         </HorizontalScrollView>

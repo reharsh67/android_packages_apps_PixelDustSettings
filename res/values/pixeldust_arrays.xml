@@ -438,6 +438,11 @@
         <item>@string/qs_tile_style_oreo</item>
         <item>@string/qs_tile_style_oreo_circle_trim</item>
         <item>@string/qs_tile_style_oreo_squircle_trim</item>
+        <item>@string/qs_tile_style_neonlike</item>
+        <item>@string/qs_tile_style_oos</item>
+        <item>@string/qs_tile_style_triangles</item>
+        <item>@string/qs_tile_style_divided</item>
+        <item>@string/qs_tile_style_cosmos</item>
     </string-array>
 
     <string-array name="qs_tile_style_selector_values" translatable="false">
@@ -460,6 +465,11 @@
         <item>16</item>
         <item>17</item>
         <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
     </string-array>
 
     <string-array name="lockscreen_cover_filter_entries">

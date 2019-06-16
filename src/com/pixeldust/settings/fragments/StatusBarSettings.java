@@ -1,6 +1,4 @@
 /*
- * Copyright (C) 2016 The CyanogenMod project
- * Copyright (C) 2017-2018 The LineageOS project
  * Copyright (C) 2019 The PixelDust Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,7 +59,6 @@ import java.util.Set;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String NETWORK_TRAFFIC_CATEGORY = "network_traffic";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
@@ -71,14 +68,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     public static final int BATTERY_STYLE_DOTTED_CIRCLE = 2;
     public static final int BATTERY_STYLE_TEXT = 3;
     public static final int BATTERY_STYLE_HIDDEN = 4;
-
-    private PreferenceCategory mNetworkTrafficCategory;
-    private DropDownPreference mNetTrafficMode;
-    private SwitchPreference mNetTrafficAutohide;
-    private DropDownPreference mNetTrafficUnits;
-    private SwitchPreference mNetTrafficShowUnits;
-
-    private static List<String> sNonIndexableKeys = new ArrayList<>();
 
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
@@ -117,36 +106,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.pixeldust_settings_statusbar);
 
         final ContentResolver resolver = getActivity().getContentResolver();
-
-        mNetworkTrafficCategory = (PreferenceCategory) findPreference(NETWORK_TRAFFIC_CATEGORY);
-
-        if (!isNetworkTrafficAvailable()) {
-            getPreferenceScreen().removePreference(mNetworkTrafficCategory);
-        } else {
-            mNetTrafficMode = (DropDownPreference)
-                    findPreference(Settings.System.NETWORK_TRAFFIC_MODE);
-            mNetTrafficMode.setOnPreferenceChangeListener(this);
-            int mode = Settings.System.getIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
-            mNetTrafficMode.setValue(String.valueOf(mode));
-
-            mNetTrafficAutohide = (SwitchPreference)
-                    findPreference(Settings.System.NETWORK_TRAFFIC_AUTOHIDE);
-            mNetTrafficAutohide.setOnPreferenceChangeListener(this);
-
-            mNetTrafficUnits = (DropDownPreference)
-                    findPreference(Settings.System.NETWORK_TRAFFIC_UNITS);
-            mNetTrafficUnits.setOnPreferenceChangeListener(this);
-            int units = Settings.System.getIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_UNITS, /* Mbps */ 1, UserHandle.USER_CURRENT);
-            mNetTrafficUnits.setValue(String.valueOf(units));
-
-            mNetTrafficShowUnits = (SwitchPreference)
-                    findPreference(Settings.System.NETWORK_TRAFFIC_SHOW_UNITS);
-            mNetTrafficShowUnits.setOnPreferenceChangeListener(this);
-
-            updateNetworkTrafficEnabledStates(mode);
-        }
 
         mTextSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
         mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
@@ -241,36 +200,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        if (mNetworkTrafficCategory != null && !isNetworkTrafficAvailable()) {
-            getPreferenceScreen().removePreference(mNetworkTrafficCategory);
-        }
-    }
-
-    private boolean isNetworkTrafficAvailable(){
-        if (getResources().getBoolean(
-                com.android.internal.R.bool.config_physicalDisplayCutout)){
-            return Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.DISPLAY_CUTOUT_HIDDEN, 0, UserHandle.USER_CURRENT) == 1;
-        } else {
-            return true;
-        }
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         AlertDialog dialog;
-        if (preference == mNetTrafficMode) {
-            int mode = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_MODE, mode);
-            updateNetworkTrafficEnabledStates(mode);
-        } else if (preference == mNetTrafficUnits) {
-            int units = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_UNITS, units);
-        } else if (preference == mBatteryStyle) {
+        if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             updateBatteryOptions(value);
             return true;
@@ -367,18 +299,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return true;
-    }
-
-    private void updateNetworkTrafficEnabledStates(int mode) {
-        final boolean enabled = mode != 0;
-        mNetTrafficAutohide.setEnabled(enabled);
-        mNetTrafficUnits.setEnabled(enabled);
-        mNetTrafficShowUnits.setEnabled(enabled);
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        return super.onPreferenceTreeClick(preference);
     }
 
     private void updateBatteryOptions(int batterystyle) {

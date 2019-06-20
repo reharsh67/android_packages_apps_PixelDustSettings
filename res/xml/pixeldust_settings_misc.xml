@@ -46,11 +46,12 @@
         android:key="perf_cat"
         android:title="@string/perf_cat_title" >
 
-    <Preference
-        android:key="gaming_mode"
-        android:title="@string/gaming_mode_title"
-        android:summary="@string/gaming_mode_summary"
-        android:fragment="com.pixeldust.settings.fragments.GamingMode" />
+        <com.pixeldust.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="gaming_mode_master_switch"
+            android:fragment="com.pixeldust.settings.fragments.GamingMode"
+            android:title="@string/gaming_mode_title"
+            android:summary="@string/gaming_mode_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 

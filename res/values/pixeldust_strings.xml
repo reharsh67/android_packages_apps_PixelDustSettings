@@ -638,4 +638,28 @@
     <string name="network_traffic_hidearrow">Hide arrows</string>
     <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
 
+    <!-- QS tile styles -->
+    <string name="qs_styles_dialog_title">QS tile styles</string>
+    <string name="qs_styles_dialog_summary">Select a QS tile style</string>
+    <string name="qs_tile_style_default">Default</string>
+    <string name="qs_tile_style_square">Square</string>
+    <string name="qs_tile_style_rounded_square">Rounded square</string>
+    <string name="qs_tile_style_squircle">Squircle</string>
+    <string name="qs_tile_style_tear_drop">Tear drop</string>
+    <string name="qs_tile_style_circle_gradient">Circle Gradient</string>
+    <string name="qs_tile_style_circle_trim">Circle with trim</string>
+    <string name="qs_tile_style_dottedcircle">Dotted Circle</string>
+    <string name="qs_tile_style_circle_dualtone">Dual-Toned Circle</string>
+    <string name="qs_tile_style_two_tone_circle">Two-toned circle with trim</string>
+    <string name="qs_tile_style_squircle_trim">Squircle with trim</string>
+    <string name="qs_tile_style_mountain">Mountain</string>
+    <string name="qs_tile_style_ninja">Ninja</string>
+    <string name="qs_tile_style_pokesign">Pokesign</string>
+    <string name="qs_tile_style_wavey">Wavey</string>
+    <string name="qs_tile_style_cookie">Cookie</string>
+    <string name="qs_tile_style_oreo">Default (Oreo)</string>
+    <string name="qs_tile_style_oreo_circle_trim">Circle Trim (Oreo)</string>
+    <string name="qs_tile_style_oreo_squircle_trim">Squircle Trim (Oreo)</string>
+    <string name="theme_accent_picker_default">Default</string>
+
 </resources>

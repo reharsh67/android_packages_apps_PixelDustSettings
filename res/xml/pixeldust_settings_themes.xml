@@ -37,6 +37,11 @@
             android:entries="@array/systemui_theme_entries"
             android:entryValues="@array/systemui_theme_values" />
 
+        <Preference
+            android:key="qs_tile_style"
+            android:title="@string/qs_styles_dialog_title"
+            android:summary="@string/qs_styles_dialog_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

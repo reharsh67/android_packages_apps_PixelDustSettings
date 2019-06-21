@@ -68,6 +68,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
     private static final String QS_PANEL_COLOR = "qs_panel_color";
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+    private static final String KEY_QS_TILE_STYLE = "qs_tile_style";
 
     private Handler mHandler;
 
@@ -83,6 +84,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
     private ListPreference mSystemUiThemePref;
     private CustomSeekBarPreference mQsPanelAlpha;
     private ColorPickerPreference mQsPanelColor;
+    private Preference mQSTileStyles;
     private int mQsPanelAlphaValue;
     private boolean mChangeQsPanelAlpha = true;
 
@@ -148,6 +150,8 @@ public class ThemeFragment extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pixeldust_settings_themes);
+        mQSTileStyles = (Preference) findPreference(KEY_QS_TILE_STYLE);
+
         // OMS and PMS setup
         mOverlayService = ServiceManager.getService(Context.OVERLAY_SERVICE) != null ? new OverlayManagerWrapper()
                 : null;
@@ -158,6 +162,19 @@ public class ThemeFragment extends SettingsPreferenceFragment
         setupStylePref();
         setupQsPrefs();
         setupAccentPref();
+    }
+
+    public void updateEnableState() {
+        if (mQSTileStyles == null) {
+            return;
+        }
+        mQSTileStyles.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                QsTileStyles.show(mCurrentFragment);
+                return true;
+            }
+        });
     }
 
     private void setupBasePref() {
@@ -282,6 +299,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
+        updateEnableState();
     }
 
     @Override

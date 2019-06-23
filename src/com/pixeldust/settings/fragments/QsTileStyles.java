@@ -50,6 +50,8 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
     private int mCurrentUserId;
     private Context mContext;
 
+    private static Fragment mParent;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +148,7 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         if (which == AlertDialog.BUTTON_NEUTRAL) {
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_TILE_STYLE, 0, mCurrentUserId);
+            ((ThemeFragment) mParent).setupQSTileStylesPref();
             dismiss();
         }
     }
@@ -154,6 +157,7 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
         if (!parent.isAdded()) return;
 
         final QsTileStyles dialog = new QsTileStyles();
+        mParent = parent;
         dialog.setTargetFragment(parent, 0);
         dialog.show(parent.getFragmentManager(), TAG_QS_TILE_STYLES);
     }
@@ -171,6 +175,7 @@ public class QsTileStyles extends InstrumentedDialogFragment implements OnClickL
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
                             Settings.System.QS_TILE_STYLE, Integer.parseInt(style), mCurrentUserId);
+                    ((ThemeFragment) mParent).setupQSTileStylesPref();
                     dismiss();
                 }
             });

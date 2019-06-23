@@ -162,6 +162,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
         setupStylePref();
         setupQsPrefs();
         setupAccentPref();
+        setupQSTileStylesPref();
     }
 
     public void updateEnableState() {
@@ -294,6 +295,19 @@ public class ThemeFragment extends SettingsPreferenceFragment
                 : Color.parseColor("#" + colorVal);
         mThemeColor.setNewPreviewColor(color);
         mThemeColor.setOnPreferenceChangeListener(this);
+    }
+
+    public void setupQSTileStylesPref() {
+        if (mQSTileStyles != null) {
+            final int n = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+            if (n == 0) {
+                mQSTileStyles.setSummary(R.string.qs_styles_dialog_summary);
+            } else {
+                String[] styleEntries = getResources().getStringArray(R.array.qs_tile_style_selector_entries);
+                mQSTileStyles.setSummary(styleEntries[n]);
+            }
+        }
     }
 
     @Override

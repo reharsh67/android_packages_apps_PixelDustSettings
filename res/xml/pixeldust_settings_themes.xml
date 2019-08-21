@@ -86,8 +86,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="corners_category"
-        android:title="@string/corners_category" >
+        android:key="cutout_category"
+        android:title="@string/cutout_category" >
 
         <Preference
             android:key="cutout_settings"
@@ -95,6 +95,12 @@
             android:summary="@string/cutout_main_summary"
             android:fragment="com.pixeldust.settings.fragments.CutoutFragment"
             android:icon="@drawable/ic_cutout" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="corners_category"
+        android:title="@string/corners_category" >
 
         <com.pixeldust.settings.preferences.SecureSettingSwitchPreference
            android:key="sysui_rounded_fwvals"

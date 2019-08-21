@@ -69,7 +69,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String KEY_QS_TILE_STYLE = "qs_tile_style";
-    private static final String PREF_KEY_CUTOUT = "cutout_settings";
+    private static final String CAT_KEY_CUTOUT = "cutout_category";
 
     private Handler mHandler;
 
@@ -152,9 +152,13 @@ public class ThemeFragment extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pixeldust_settings_themes);
         mQSTileStyles = (Preference) findPreference(KEY_QS_TILE_STYLE);
-        Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
-        if (!hasPhysicalDisplayCutout(getContext()))
-            getPreferenceScreen().removePreference(mCutoutPref);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        PreferenceCategory mCutoutPref = (PreferenceCategory) prefScreen.findPreference(CAT_KEY_CUTOUT);
+
+        if (!hasPhysicalDisplayCutout(getContext())) {
+            prefScreen.removePreference(mCutoutPref);
+        }
 
         // OMS and PMS setup
         mOverlayService = ServiceManager.getService(Context.OVERLAY_SERVICE) != null ? new OverlayManagerWrapper()

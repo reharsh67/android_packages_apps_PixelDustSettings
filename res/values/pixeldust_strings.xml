@@ -55,6 +55,11 @@
 
     <!-- Navbar options -->
     <string name="navbar_invert_layout_title">Invert layout</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
     <!-- Enable navbar -->
     <string name="enable_navbar_title">Enable</string>
     <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>

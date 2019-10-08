@@ -47,9 +47,9 @@ import java.util.List;
 public class NavigationBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
-    private static final String LAYOUT_SETTINGS = "layout_settings";
+    private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
-    private static final String NAVIGATION_BAR_INVERSE = "sysui_nav_bar_inverse";
+    private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
 
     private SwitchPreference mEnableNavigationBar;

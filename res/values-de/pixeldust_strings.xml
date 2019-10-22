@@ -55,6 +55,9 @@
 
     <!-- Navbar options -->
     <string name="navbar_invert_layout_title">Layout umkehren</string>
+    <!-- Enable navbar -->
+    <string name="enable_navbar_title">Aktivieren</string>
+    <string name="enable_navbar_summary">Steuert, ob die Navigationsleiste angezeigt wird</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Sperrbildschirm-Verknüpfungen</string>

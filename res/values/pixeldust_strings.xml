@@ -36,6 +36,7 @@
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="default_string">Default</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -411,5 +412,11 @@
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">Lockscreen charging animation</string>
     <string name="lockscreen_charging_animation_summary">Display a fancy animation when the device is charging</string>
+
+    <!-- Ambient edge lighting -->
+    <string name="notification_screen_title">Screen</string>
+    <string name="pulse_ambient_light_title">Edge lighting</string>
+    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="pulse_ambient_light_color_title">Edge light color</string>
 
 </resources>

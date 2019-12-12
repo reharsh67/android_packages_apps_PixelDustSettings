@@ -34,6 +34,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
 import com.pixeldust.settings.preferences.SystemSettingSeekBarPreference;
 import com.pixeldust.settings.preferences.SystemSettingSwitchPreference;
+import com.pixeldust.settings.preferences.AmbientLightSettingsPreview;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -77,6 +78,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
+        AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
         mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
 
         mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
@@ -129,6 +131,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             } else {
                 preference.setSummary(hex);
             }
+            AmbientLightSettingsPreview.setAmbientLightPreviewColor(Integer.valueOf(String.valueOf(newValue)));
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);

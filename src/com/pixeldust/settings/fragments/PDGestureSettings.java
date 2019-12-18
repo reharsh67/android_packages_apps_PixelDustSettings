@@ -19,6 +19,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 
+import androidx.preference.Preference;
+
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -32,11 +34,18 @@ import java.util.List;
 @SearchIndexable
 public class PDGestureSettings extends SettingsPreferenceFragment implements Indexable {
 
+    private static final String AWARE_CATEGORY = "aware_settings";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.pixeldust_settings_gestures);
+
+        Preference Aware = findPreference(AWARE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_aware)) {
+            getPreferenceScreen().removePreference(Aware);
+        }
     }
 
     @Override

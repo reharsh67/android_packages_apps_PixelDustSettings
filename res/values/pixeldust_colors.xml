@@ -37,4 +37,6 @@
     <color name="ambient_light_screen_color">#111111</color>
     <color name="ambient_light_body_color">#323232</color>
 
+    <color name="pdx_category_icon_tint">@*android:color/notification_material_background_color</color>
+
 </resources>

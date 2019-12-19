@@ -32,6 +32,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
+import com.pixeldust.settings.preferences.SystemSettingSeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -39,6 +40,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                          implements OnPreferenceChangeListener {
 
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
+    private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
 
@@ -48,6 +50,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mDozeBrightness;
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mTextColor;
+    private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,6 +77,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
         mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
+
+        mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
+        mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
+        int duration = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
+        mEdgeLightDurationPreference.setValue(duration);
 
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
@@ -110,6 +119,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
+            return true;
+        } else if (preference == mEdgeLightDurationPreference) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
             return true;
         } else if (preference == mPulseBrightness) {
             int value = (Integer) newValue;

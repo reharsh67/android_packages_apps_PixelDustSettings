@@ -317,17 +317,6 @@
         <item>3</item>
     </string-array>
 
-    <!-- Weather -->
-    <string-array name="weather_unit_entries" translatable="false">
-        <item>@string/weather_unit_metric</item>
-        <item>@string/weather_unit_imperial</item>
-    </string-array>
-
-    <string-array name="weather_unit_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
     <!-- Network traffic location -->
     <string-array name="network_traffic_location_entries">
         <item>@string/traffic_disabled</item>

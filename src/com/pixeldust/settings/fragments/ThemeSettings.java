@@ -16,6 +16,7 @@
 package com.pixeldust.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,6 +24,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -42,6 +44,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import com.pixeldust.settings.fragments.AccentPicker;
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
@@ -59,7 +62,9 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
+    private static final String KEY_ACCENT_PICKER = "berry_accent_picker";
 
+    private Preference mAccentPicker;
     private Preference mThemeBrowse;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
@@ -74,6 +79,8 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
 
         mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
         mThemeBrowse.setEnabled(isBrowseThemesAvailable());
+
+        mAccentPicker = findPreference(KEY_ACCENT_PICKER);
 
         Resources res = null;
         Context ctx = getContext();
@@ -133,6 +140,14 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
             restoreCorners();
         }
         return true;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mAccentPicker) {
+            AccentPicker.show(this);
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     private boolean isBrowseThemesAvailable() {

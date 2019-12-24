@@ -19,10 +19,6 @@
         android:title="@string/theming_title">
 
         <Preference
-            android:key="berry_accent_picker"
-            android:title="@string/theme_accent_picker_title" />
-
-        <Preference
             android:key="theme_select_activity"
             android:title="@string/theme_select_title"
             android:summary="@string/theme_select_summary"

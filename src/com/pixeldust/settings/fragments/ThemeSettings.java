@@ -44,7 +44,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.pixeldust.settings.fragments.AccentPicker;
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
@@ -62,9 +61,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
-    private static final String KEY_ACCENT_PICKER = "berry_accent_picker";
 
-    private Preference mAccentPicker;
     private Preference mThemeBrowse;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
@@ -79,8 +76,6 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
 
         mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
         mThemeBrowse.setEnabled(isBrowseThemesAvailable());
-
-        mAccentPicker = findPreference(KEY_ACCENT_PICKER);
 
         Resources res = null;
         Context ctx = getContext();
@@ -144,9 +139,6 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mAccentPicker) {
-            AccentPicker.show(this);
-        }
         return super.onPreferenceTreeClick(preference);
     }
 

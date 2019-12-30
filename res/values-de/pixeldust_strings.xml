@@ -316,12 +316,16 @@
     <string name="status_bar_battery_text_charging_title">Akku-Prozentsatz beim Laden</string>
     <string name="status_bar_battery_text_charging_summary">Beim Laden immer den Akku-Prozentsatz anzeigen</string>
 
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Akku-Prozentsatz</string>
     <string name="battery_percentage_off">Aus</string>
     <string name="battery_percentage_next">Ein</string>
     <string name="battery_percentage_inside">Ein (im Symbol)</string>
     <string name="battery_percentage_estimate">Ein (Schätzung)</string>
+
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Geschätzte Akkulaufzeit</string>
+    <string name="battery_estimate_summary">Geschätzte verbleibende Akkulaufzeit anzeigen, sofern verfügbar</string>
 
     <!-- QS clock -->
     <string name="qs_clock_title">Uhrzeit</string>

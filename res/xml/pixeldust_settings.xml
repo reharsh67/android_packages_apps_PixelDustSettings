@@ -17,13 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/pixeldust_settings_title" >
 
-        <!-- Theming -->
-        <Preference
-            android:key="themes_category"
-            android:title="@string/theming_title"
-            android:fragment="com.pixeldust.settings.fragments.ThemeSettings"
-            android:icon="@drawable/ic_settings_theming"/>
-
         <!-- Status Bar -->
         <Preference
             android:key="statusbar_category"

@@ -22,13 +22,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.os.Vibrator;
+import android.provider.Settings;
+import android.widget.Toast;
+
 import androidx.preference.PreferenceCategory;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
@@ -75,10 +77,8 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
 
-    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
-            "torch_long_press_power_timeout";
-
-    private ListPreference mTorchLongPressPowerTimeout;
+    private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
+    private ListPreference mTorchPowerButton;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -210,20 +210,20 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
 
-        // Torch Power button
-        mTorchLongPressPowerTimeout =
-                    (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
-
-        mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
-        int TorchTimeout = Settings.System.getIntForUser(getContentResolver(),
-                        Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
-        mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
-        mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
+        // screen off torch
+        mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
+        int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
+                Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
+        mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
+        mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
+        mTorchPowerButton.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
+                    Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1) == 0;
         if (preference == mBacklightTimeout) {
             String BacklightTimeout = (String) newValue;
             int BacklightTimeoutValue = Integer.parseInt(BacklightTimeout);
@@ -250,16 +250,6 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                     value ? 1 : 0, UserHandle.USER_CURRENT);
             setActionPreferencesEnabled(!value);
             return true;
-        } else if (preference == mTorchLongPressPowerTimeout) {
-            String TorchTimeout = (String) newValue;
-            int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, TorchTimeoutValue, UserHandle.USER_CURRENT);
-            int TorchTimeoutIndex = mTorchLongPressPowerTimeout
-                    .findIndexOfValue(TorchTimeout);
-            mTorchLongPressPowerTimeout
-                    .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
-            return true;
         } else if (preference == mDisableNavigationKeys) {
             if (mIsNavSwitchingMode) {
                 return false;
@@ -281,6 +271,22 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                     mIsNavSwitchingMode = false;
                 }
             }, 1000);
+            return true;
+        } else if (preference == mTorchPowerButton) {
+            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
+            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
+            mTorchPowerButton.setSummary(
+                    mTorchPowerButton.getEntries()[index]);
+            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
+                    mTorchPowerButtonValue);
+            if (mTorchPowerButtonValue == 1 && DoubleTapPowerGesture) {
+                //if doubletap for torch is enabled, switch off double tap for camera
+                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
+                        1);
+                Toast.makeText(getActivity(),
+                    (R.string.torch_power_button_gesture_dt_toast),
+                    Toast.LENGTH_SHORT).show();
+            }
             return true;
         }
         return false;

@@ -36,6 +36,8 @@ public class PDGestureSettings extends SettingsPreferenceFragment implements Ind
 
     private static final String AWARE_CATEGORY = "aware_settings";
 
+    private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -45,6 +47,11 @@ public class PDGestureSettings extends SettingsPreferenceFragment implements Ind
         Preference Aware = findPreference(AWARE_CATEGORY);
         if (!getResources().getBoolean(R.bool.has_aware)) {
             getPreferenceScreen().removePreference(Aware);
+        }
+
+        Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+            getPreferenceScreen().removePreference(ActiveEdge);
         }
     }
 

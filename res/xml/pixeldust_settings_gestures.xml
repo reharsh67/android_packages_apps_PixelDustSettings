@@ -19,21 +19,27 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
-         android:key="double_tap_sleep_gesture"
-         android:title="@string/double_tap_to_sleep_title"
-         android:summary="@string/double_tap_to_sleep_summary"
-         android:defaultValue="false" />
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_to_sleep_title"
+        android:summary="@string/double_tap_to_sleep_summary"
+        android:defaultValue="false" />
 
     <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
-         android:key="double_tap_sleep_lockscreen"
-         android:title="@string/double_tap_sleep_lockscreen_title"
-         android:summary="@string/double_tap_sleep_lockscreen_summary"
-         android:defaultValue="false" />
+        android:key="double_tap_sleep_lockscreen"
+        android:title="@string/double_tap_sleep_lockscreen_title"
+        android:summary="@string/double_tap_sleep_lockscreen_summary"
+        android:defaultValue="false" />
 
     <com.google.android.settings.aware.AwareSettingsDialogPreference
         android:key="aware_settings"
         android:icon="@drawable/dt_aware"
         android:title="@string/aware_settings_title"
         android:summary="@string/aware_settings_summary" />
+
+    <Preference
+        android:key="active_edge_category"
+        android:title="@string/active_edge_title"
+        android:summary="@string/active_edge_summary"
+        android:fragment="com.pixeldust.settings.fragments.ActiveEdge" />
 
 </PreferenceScreen>

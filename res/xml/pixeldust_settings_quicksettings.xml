@@ -60,6 +60,22 @@
         android:defaultValue="false"
         android:dependency="qs_show_brightness" />
 
+    <!-- QS brightness icon -->
+    <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_show_brightness_icon"
+        android:title="@string/qs_show_brightness_icon_title"
+        android:summary="@string/qs_show_brightness_icon_summary"
+        android:dependency="qs_show_brightness"
+        android:defaultValue="true"/>
+
+    <!-- QS brightness minmax buttons -->
+    <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_show_brightness_minmax"
+        android:title="@string/qs_show_brightness_minmax_title"
+        android:summary="@string/qs_show_brightness_minmax_summary"
+        android:dependency="qs_show_brightness"
+        android:defaultValue="true"/>
+
     <!-- QS security footer -->
     <com.pixeldust.settings.preferences.SecureSettingSwitchPreference
         android:key="qs_show_secure"

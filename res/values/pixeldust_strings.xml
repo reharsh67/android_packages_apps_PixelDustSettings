@@ -414,6 +414,7 @@
     <string name="ambient_doze_brightness_title">Ambient display brightness</string>
     <string name="ambient_doze_brightness_summary">Set brightness to use during ambient display on</string>
 
+    <string name="lockscreen_misc_category">Misc</string>
     <string name="lockscreen_items_category">Lockscreen items</string>
     <string name="weather_lockscreen_title">Lockscreen weather</string>
     <string name="weather_lockscreen_summary">Display weather information on the lockscreen and/or ambient screen</string>

@@ -22,24 +22,18 @@
         android:key="lockscreen_items"
         android:title="@string/lockscreen_items_category" >
 
-        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
-            android:key="weather_lockscreen"
-            android:title="@string/weather_lockscreen_title"
-            android:summary="@string/weather_lockscreen_summary"
-            android:defaultValue="true" />
-
-        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_charging_animation"
-            android:title="@string/lockscreen_charging_animation_title"
-            android:summary="@string/lockscreen_charging_animation_summary"
-            android:defaultValue="true" />
-
         <Preference
             android:title="@string/lockscreen_tuner_title" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
         </Preference>
+
+        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_charging_animation"
+            android:title="@string/lockscreen_charging_animation_title"
+            android:summary="@string/lockscreen_charging_animation_summary"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory

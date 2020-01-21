@@ -33,7 +33,6 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
 import com.pixeldust.settings.preferences.SystemSettingSeekBarPreference;
-import com.pixeldust.settings.preferences.SystemSettingSwitchPreference;
 import com.pixeldust.settings.preferences.AmbientLightSettingsPreview;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
@@ -86,18 +85,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         int duration = Settings.System.getInt(getContentResolver(),
                 Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
         mEdgeLightDurationPreference.setValue(duration);
-
-        if (!getResources().getBoolean(
-                        com.android.internal.R.bool.config_supportAmbientWakeGestures)) {
-            PreferenceCategory mEdgeCat = (PreferenceCategory) findPreference("notification_screen");
-            SystemSettingSwitchPreference mEdgeAutoLightPreference = (SystemSettingSwitchPreference) findPreference("pulse_ambient_light");
-            SystemSettingSwitchPreference mEdgeAutoColorPreference = (SystemSettingSwitchPreference) findPreference("pulse_ambient_auto_color");
-            prefScreen.removePreference(mEdgeAutoLightPreference);
-            prefScreen.removePreference(mEdgeLightDurationPreference);
-            prefScreen.removePreference(mEdgeAutoColorPreference);
-            prefScreen.removePreference(mEdgeLightColorPreference);
-            prefScreen.removePreference(mEdgeCat);
-        }
 
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);

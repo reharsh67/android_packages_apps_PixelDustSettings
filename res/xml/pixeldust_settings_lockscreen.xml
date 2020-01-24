@@ -28,12 +28,6 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
         </Preference>
-
-        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_charging_animation"
-            android:title="@string/lockscreen_charging_animation_title"
-            android:summary="@string/lockscreen_charging_animation_summary"
-            android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory

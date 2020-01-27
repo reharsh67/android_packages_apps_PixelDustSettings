@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The PixelDust Project
+ * Copyright (C) 2017-2020 The PixelDust Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,9 @@ package com.pixeldust.settings.fragments;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.os.UserHandle;
-import android.provider.Settings;
 import android.os.Bundle;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
@@ -29,7 +30,10 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
 import com.pixeldust.settings.preferences.SystemSettingSeekBarPreference;
@@ -37,8 +41,12 @@ import com.pixeldust.settings.preferences.AmbientLightSettingsPreview;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
 public class NotificationsSettings extends SettingsPreferenceFragment
-                         implements OnPreferenceChangeListener {
+                         implements OnPreferenceChangeListener, Indexable {
 
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
@@ -146,4 +154,25 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.PIXELDUST;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                                                                            boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.pixeldust_settings_notifications;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+            };
 }

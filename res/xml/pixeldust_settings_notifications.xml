@@ -42,10 +42,11 @@
             android:layout="@layout/ambient_light"
             android:selectable="false"/>
 
-        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="pulse_ambient_light"
             android:title="@string/pulse_ambient_light_title"
             android:summary="@string/pulse_ambient_light_summary"
+            android:persistent="false"
             android:defaultValue="false" />
 
         <com.pixeldust.settings.preferences.SystemSettingSeekBarPreference

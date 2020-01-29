@@ -27,6 +27,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -48,12 +49,14 @@ import java.util.List;
 public class NotificationsSettings extends SettingsPreferenceFragment
                          implements OnPreferenceChangeListener, Indexable {
 
+    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
 
     private Preference mChargingLeds;
+    private SwitchPreference mEdgeLightPreference;
     private ColorPickerPreference mEdgeLightColorPreference;
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
@@ -74,6 +77,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefScreen.removePreference(mChargingLeds);
         }
+
+        mEdgeLightPreference = (SwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
+        boolean mEdgeLightOn = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT, 0) == 1;
+        mEdgeLightPreference.setChecked(mEdgeLightOn);
+        mEdgeLightPreference.setOnPreferenceChangeListener(this);
 
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
         mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
@@ -118,7 +127,19 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
 
-        if (preference == mEdgeLightColorPreference) {
+        if (preference == mEdgeLightPreference) {
+            boolean isOn = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.PULSE_AMBIENT_LIGHT, isOn ? 1 : 0);
+            // if edge light is enabled, switch off AOD and switch on Ambient wake gestures
+            if (isOn) {
+                Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, 0);
+                Settings.System.putInt(resolver, Settings.System.AMBIENT_WAKE_GESTURES, 1);
+                Toast.makeText(getContext(), R.string.applied_changes_edgelight,
+                        Toast.LENGTH_LONG).show();
+            }
+            return true;
+        } else if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToRGB(
                    Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#3980ff")) {

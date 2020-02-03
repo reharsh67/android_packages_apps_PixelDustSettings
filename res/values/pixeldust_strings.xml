@@ -400,6 +400,8 @@
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
     <string name="applied_changes_edgelight">For Edge lighting to work, Ambient wake gestures have been activated.</string>
     <string name="pulse_ambient_light_note">Wake screen on receiving new notifications must be turned on</string>
+    <string name="pulse_ambient_light_repeat_count_title">Repeat count</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
 
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze Brightness Config</string>

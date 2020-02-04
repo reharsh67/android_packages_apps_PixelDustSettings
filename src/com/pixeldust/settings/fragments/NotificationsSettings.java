@@ -133,7 +133,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                     Settings.System.PULSE_AMBIENT_LIGHT, isOn ? 1 : 0);
             // if edge light is enabled, switch off AOD and switch on Ambient wake gestures
             if (isOn) {
-                Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, 0);
                 Settings.System.putInt(resolver, Settings.System.AMBIENT_WAKE_GESTURES, 1);
                 Toast.makeText(getContext(), R.string.applied_changes_edgelight,
                         Toast.LENGTH_LONG).show();

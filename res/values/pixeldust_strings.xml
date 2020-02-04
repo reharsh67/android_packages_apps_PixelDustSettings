@@ -398,7 +398,7 @@
     <string name="ambient_notification_light_accent_summary">Follow system accent color instead of the user defined edge light color</string>
     <string name="pulse_ambient_light_duration_title">Duration</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
-    <string name="applied_changes_edgelight">For Edge lighting to work, AOD was automatically deactivated and ambient wake gestures activated.</string>
+    <string name="applied_changes_edgelight">For Edge lighting to work, Ambient wake gestures have been activated.</string>
     <string name="pulse_ambient_light_note">Wake screen on receiving new notifications must be turned on</string>
 
     <!-- Doze Brightness Config -->

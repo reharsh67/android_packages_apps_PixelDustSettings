@@ -386,9 +386,11 @@
     <string name="unit_pixels">dp</string>
 
     <!-- Ambient edge lighting -->
-    <string name="notification_screen_title">Screen</string>
-    <string name="pulse_ambient_light_title">Edge lighting</string>
-    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="edge_lighting_category_title">Edge lighting</string>
+    <string name="pulse_ambient_light_title">Enable</string>
+    <string name="pulse_ambient_light_summary">Show edge lighting on notification pulse</string>
+    <string name="ambient_notification_light_enabled_title">Show edge lighting on AoD</string>
+    <string name="ambient_notification_light_enabled_summary">Show edge lighting on AoD on new notification</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
     <string name="pulse_ambient_auto_color_title">Auto color</string>
     <string name="pulse_ambient_auto_color_summary">Sets edge light color to the primary color of wallpaper</string>

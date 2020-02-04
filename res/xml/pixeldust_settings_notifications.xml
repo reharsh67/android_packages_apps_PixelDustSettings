@@ -33,8 +33,8 @@
         android:title="@string/battery_light_settings" />
 
     <PreferenceCategory
-        android:key="notification_screen"
-        android:title="@string/notification_screen_title" >
+        android:key="edge_lighting_options"
+        android:title="@string/edge_lighting_category_title" >
 
         <!-- Preview -->
         <com.pixeldust.settings.preferences.AmbientLightSettingsPreview
@@ -47,6 +47,13 @@
             android:title="@string/pulse_ambient_light_title"
             android:summary="@string/pulse_ambient_light_summary"
             android:persistent="false"
+            android:defaultValue="false" />
+
+        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_enabled"
+            android:title="@string/ambient_notification_light_enabled_title"
+            android:summary="@string/ambient_notification_light_enabled_summary"
+            android:dependency="pulse_ambient_light"
             android:defaultValue="false" />
 
         <com.pixeldust.settings.preferences.SystemSettingSeekBarPreference

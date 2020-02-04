@@ -34,6 +34,7 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settingslib.Utils;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.pixeldust.settings.preferences.CustomSeekBarPreference;
@@ -49,6 +50,7 @@ import java.util.List;
 public class NotificationsSettings extends SettingsPreferenceFragment
                          implements OnPreferenceChangeListener, Indexable {
 
+    private static final String AMBIENT_NOTIFICATION_LIGHT_ACCENT = "ambient_notification_light_accent";
     private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
@@ -57,6 +59,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
 
     private Preference mChargingLeds;
     private SwitchPreference mEdgeLightPreference;
+    private SwitchPreference mEdgeLightAccentColorPreference;
     private ColorPickerPreference mEdgeLightColorPreference;
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
@@ -84,6 +87,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         mEdgeLightPreference.setChecked(mEdgeLightOn);
         mEdgeLightPreference.setOnPreferenceChangeListener(this);
 
+        mEdgeLightAccentColorPreference = (SwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT_ACCENT);
+        boolean mEdgeLightAccentOn = Settings.System.getInt(getContentResolver(),
+                Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0) == 1;
+        mEdgeLightAccentColorPreference.setChecked(mEdgeLightAccentOn);
+        mEdgeLightAccentColorPreference.setOnPreferenceChangeListener(this);
+
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
         mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
         int edgeLightColor = Settings.System.getInt(getContentResolver(),
@@ -94,8 +103,10 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
-        AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
         mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
+
+        // Update the edge light preference and preview accordingly
+        updateEdgeLightColorPreferences(mEdgeLightAccentOn);
 
         mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
         mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
@@ -138,6 +149,13 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                         Toast.LENGTH_LONG).show();
             }
             return true;
+        } else if (preference == mEdgeLightAccentColorPreference) {
+            boolean isOn = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACCENT, isOn ? 1 : 0);
+            mEdgeLightAccentColorPreference.setChecked(isOn);
+            updateEdgeLightColorPreferences(isOn);
+            return true;
         } else if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToRGB(
                    Integer.valueOf(String.valueOf(newValue)));
@@ -168,6 +186,17 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    private void updateEdgeLightColorPreferences(boolean useAccentColor) {
+        mEdgeLightColorPreference.setEnabled(!useAccentColor);
+        if (useAccentColor) {
+            AmbientLightSettingsPreview.setAmbientLightPreviewColor(Utils.getColorAccentDefaultColor(getContext()));
+        } else {
+            int edgeLightColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
+            AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
+        }
     }
 
     @Override

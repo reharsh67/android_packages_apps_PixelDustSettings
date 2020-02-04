@@ -392,8 +392,6 @@
     <string name="ambient_notification_light_enabled_title">Show edge lighting on AoD</string>
     <string name="ambient_notification_light_enabled_summary">Show edge lighting on AoD on new notification</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_auto_color_title">Auto color</string>
-    <string name="pulse_ambient_auto_color_summary">Sets edge light color to the primary color of wallpaper</string>
     <string name="pulse_ambient_light_duration_title">Duration</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
     <string name="applied_changes_edgelight">For Edge lighting to work, AOD was automatically deactivated and ambient wake gestures activated.</string>

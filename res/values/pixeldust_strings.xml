@@ -147,7 +147,9 @@
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
 
-    <!-- Battery light -->
+    <!-- Notifications & Battery light -->
+    <string name="light_category_title">LED options</string>
+    <string name="notification_light_settings">Notifications light</string>
     <string name="battery_light_settings">Battery charging light</string>
     <string name="battery_light_enable">Enable</string>
     <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
@@ -157,8 +159,6 @@
     <string name="battery_light_medium_color">Medium battery</string>
     <string name="battery_light_full_color">Almost full battery</string>
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
-
-    <string name="notification_light_settings">Notifications light</string>
 
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>

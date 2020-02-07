@@ -76,11 +76,9 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.pixeldust_settings_notifications);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mChargingLeds = (Preference) findPreference("charging_light");
-        if (mChargingLeds != null
-                && !getResources().getBoolean(
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefScreen.removePreference(mChargingLeds);
+        Preference LightOptions = findPreference("light_options");
+        if (!getResources().getBoolean(R.bool.has_notification_light)) {
+            prefScreen.removePreference(LightOptions);
         }
 
         mEdgeLightPreference = (SwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);

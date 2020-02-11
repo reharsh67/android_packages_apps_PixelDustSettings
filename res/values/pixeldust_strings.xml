@@ -467,6 +467,10 @@
     <string name="active_edge_wake_title">Allow when screen is off</string>
     <string name="active_edge_wake_summary">Trigger an action when the screen is off</string>
     <string name="active_edge_footer_info">Not all squeeze actions within Active Edge have the capability to activate the display</string>
+    <string name="action_app_action">Application</string>
+    <string name="active_edge_ss_app_select_title">Select short squeeze app</string>
+    <string name="active_edge_ls_app_select_title">Select long squeeze app</string>
+    <string name="active_edge_app_select_summary">Select an app to launch with the squeeze action</string>
 
     <!-- Custom actions -->
     <string name="action_nothing">No action</string>

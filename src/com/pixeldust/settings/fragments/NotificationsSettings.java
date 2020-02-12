@@ -23,6 +23,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
@@ -57,6 +58,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
+    private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
 
     private Preference mChargingLeds;
     private SwitchPreference mEdgeLightPreference;
@@ -68,6 +70,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private ColorPickerPreference mTextColor;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
+    private ListPreference mPulseTimeout;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -139,6 +142,14 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                 Settings.System.DOZE_BRIGHTNESS, defaultDoze);
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
+
+        mPulseTimeout = (ListPreference) findPreference(PULSE_TIMEOUT_PREF);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, 0);
+
+        mPulseTimeout.setValue(Integer.toString(value));
+        mPulseTimeout.setSummary(mPulseTimeout.getEntry());
+        mPulseTimeout.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -194,6 +205,13 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                   Settings.System.DOZE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mPulseTimeout) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mPulseTimeout.findIndexOfValue((String) newValue);
+            mPulseTimeout.setSummary(mPulseTimeout.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, value);
             return true;
         }
         return false;

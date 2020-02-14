@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The PixelDust Project
+<!-- Copyright (C) 2017-2020 The PixelDust Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -55,6 +55,22 @@
             android:persistent="false"
             android:defaultValue="false" />
 
+        <ListPreference
+            android:key="ambient_notification_light_color_mode"
+            android:title="@string/ambient_notification_light_color_mode_title"
+            android:persistent="false"
+            android:entries="@array/ambient_notification_light_color_mode_entries"
+            android:entryValues="@array/ambient_notification_light_color_mode_values"
+            android:dependency="pulse_ambient_light"
+            android:defaultValue="2" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="pulse_ambient_light_color"
+            android:title="@string/pulse_ambient_light_color_title"
+            android:persistent="false"
+            android:dependency="pulse_ambient_light"
+            settings:defaultColorValue="0xFF3980FF" />
+
         <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
             android:key="pulse_ambient_light_pulse_for_all"
             android:title="@string/pulse_ambient_light_pulse_for_all_title"
@@ -95,21 +111,6 @@
             settings:units="@string/pulse_ambient_light_duration_unit"
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
-
-        <SwitchPreference
-            android:key="ambient_notification_light_accent"
-            android:title="@string/ambient_notification_light_accent_title"
-            android:summary="@string/ambient_notification_light_accent_summary"
-            android:persistent="false"
-            android:dependency="pulse_ambient_light"
-            android:defaultValue="false" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="pulse_ambient_light_color"
-            android:title="@string/pulse_ambient_light_color_title"
-            android:persistent="false"
-            android:dependency="pulse_ambient_light"
-            settings:defaultColorValue="0xFF3980FF" />
 
         <Preference
             android:icon="@drawable/ic_info_outline_24dp"

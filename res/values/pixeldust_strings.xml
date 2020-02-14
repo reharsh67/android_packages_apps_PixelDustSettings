@@ -400,8 +400,6 @@
     <string name="ambient_notification_light_hide_aod_title">Hide AoD content</string>
     <string name="ambient_notification_light_hide_aod_summary">Hide other AoD content while edge lighting is shown</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="ambient_notification_light_accent_title">Use accent color for whatever</string>
-    <string name="ambient_notification_light_accent_summary">Follow system accent color instead of the user defined edge light color</string>
     <string name="pulse_ambient_light_duration_title">Duration</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
     <string name="pulse_ambient_light_duration_unit">sec</string>
@@ -409,6 +407,10 @@
     <string name="pulse_ambient_light_note">Wake screen on receiving new notifications must be turned on</string>
     <string name="pulse_ambient_light_pulse_for_all_title">Pulse for all doze events</string>
     <string name="pulse_ambient_light_pulse_for_all_summary">Pulses for all doze events and not just for notifications</string>
+    <string name="ambient_notification_light_color_mode_title">Light pulse color</string>
+    <string name="ambient_notification_light_color_mode_automatic">Notification color</string>
+    <string name="ambient_notification_light_color_mode_accent">System accent color</string>
+    <string name="ambient_notification_light_color_mode_custom">Custom color</string>
 
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze Brightness Config</string>

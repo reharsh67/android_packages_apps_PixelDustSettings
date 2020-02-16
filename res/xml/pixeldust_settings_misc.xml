@@ -37,4 +37,11 @@
 
     </PreferenceCategory>
 
+    <!-- Disable device identifier restrictions -->
+    <com.pixeldust.settings.preferences.GlobalSettingSwitchPreference
+        android:key="privileged_device_identifier_check_relaxed"
+        android:title="@string/device_identifier_access_restrictions_title"
+        android:summary="@string/device_identifier_access_restrictions_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

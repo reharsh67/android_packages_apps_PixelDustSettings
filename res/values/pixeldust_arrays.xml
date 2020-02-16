@@ -353,6 +353,8 @@
         <item>@string/action_volume_panel</item>
         <item>@string/action_screen_off</item>
         <item>@string/action_screenshot</item>
+        <item>@string/action_notifications</item>
+
     </string-array>
 
     <string-array name="active_edge_actions_values" translatable="false">
@@ -365,6 +367,7 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+        <item>9</item>
     </string-array>
 
 </resources>

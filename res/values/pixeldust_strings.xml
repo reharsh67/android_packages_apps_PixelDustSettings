@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2019 The PixelDust Project
+     Copyright (C) 2017-2020 The PixelDust Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -372,7 +372,7 @@
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
     <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
     <string name="qs_show_brightness_icon_title">Auto brightness icon</string>
-    <string name="qs_show_brightness_icon_summary">Show auto-brightness icon to the right of the brighness slider to adjust auto-brightness</string>
+    <string name="qs_show_brightness_icon_summary">Show auto-brightness icon to the right of the brighness slider</string>
     <string name="qs_show_brightness_minmax_title">Min-Max icon</string>
     <string name="qs_show_brightness_minmax_summary">Show + - brightness control buttons near the slider</string>
     <string name="qs_show_secure_title">Security footer</string>
@@ -386,7 +386,6 @@
     <string name="content_padding">Corner content padding</string>
     <string name="status_bar_padding">Statusbar extra padding</string>
     <string name="corner_fwvals">Use framework values</string>
-    <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="unit_pixels">dp</string>
 
     <!-- Ambient edge lighting -->
@@ -402,6 +401,7 @@
     <string name="ambient_notification_light_accent_summary">Follow system accent color instead of the user defined edge light color</string>
     <string name="pulse_ambient_light_duration_title">Duration</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_unit">sec</string>
     <string name="applied_changes_edgelight">For Edge lighting to work, Ambient wake gestures have been activated.</string>
     <string name="pulse_ambient_light_note">Wake screen on receiving new notifications must be turned on</string>
     <string name="pulse_ambient_light_repeat_count_title">Repeat count</string>
@@ -470,8 +470,7 @@
     <string name="active_edge_sensitivity_title">Squeeze sensitivity</string>
     <string name="active_edge_wake_title">Allow when screen is off</string>
     <string name="active_edge_wake_summary">Trigger an action when the screen is off</string>
-    <string name="active_edge_footer_info">Not all squeeze actions within Active Edge have the capability to activate the display.\n\nIf you want to choose a specific app activity for the action, long press on any app in the apps picker.</string>
-    <string name="action_app_action">Application</string>
+    <string name="active_edge_footer_info">Not all squeeze actions within Active Edge have the capability to activate the display.</string>
     <string name="active_edge_ss_app_select_title">Select short squeeze app</string>
     <string name="active_edge_ls_app_select_title">Select long squeeze app</string>
     <string name="active_edge_app_select_summary">Select an app to launch with the squeeze action</string>
@@ -482,9 +481,18 @@
     <string name="action_voice_search">Voice search</string>
     <string name="action_launch_camera">Camera</string>
     <string name="action_flashlight">Flashlight</string>
-    <string name="action_volume_panel">Volume panel</string>  
+    <string name="action_clear_notifications">Clear notifications</string>
+    <string name="action_volume_panel">Volume panel</string>
     <string name="action_screen_off">Screen off</string>
-    <string name="action_screenshot">Screenshot</string>
     <string name="action_notifications">Notifications</string>
+    <string name="action_screenshot">Screenshot</string>
+    <string name="action_screenrecord">Screenrecord</string>
+    <string name="action_qs_panel">QS panel</string>
+    <string name="action_app_action">Application</string>
+    <string name="action_splitscreen_action">Split screen</string>
+    <string name="action_lastapp_action">Last app</string>
+    <string name="action_medianext_action">Media next</string>
+    <string name="action_mediaplay_action">Media Play/Pause</string>
+    <string name="action_ringer_modes">Ringer modes</string>
 
 </resources>

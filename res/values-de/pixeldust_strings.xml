@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017-2020 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="pixeldust_settings_title">PixelDust Einstellungen</string>
+
+    <!-- Categories -->
+    <string name="button_title">Tasten</string>
+    <string name="gestures_title">Gesten</string>
+    <string name="lockscreen_title">Sperrbildschirm</string>
+    <string name="misc_title">Verschiedenes</string>
+    <string name="navbar_title">Navigationsleiste</string>
+    <string name="notifications_title">Benachrichtigungen</string>
+    <string name="powermenu_title">Power-Menü</string>
+    <string name="quicksettings_title">Schnelleinstellungen</string>
+    <string name="recents_title">Anwendungsverlauf</string>
+    <string name="statusbar_title">Statusleiste</string>
+    <string name="volume_title">Lautstärkeeinstellungen</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
+    <string name="default_string">Standard</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Farbwahl</string>
+    <string name="press_color_to_apply">Farbe unten antippen, um diese anzuwenden</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
+    <string name="hex_check_button_text">VORSCHAU</string>
+    <string name="hex_reset_button_text">ZURÜCKSETZEN</string>
+    <string name="set">Einstellen</string>
+    <string name="color_default">Standard</string>
+    <string name="color_right_arrow" translatable="false">"→"</string>
+    <string name="color_down_arrow" translatable="false">"↓"</string>
+    <string name="longpress_info">Taste lange drücken, um die Farbe zu speichern</string>
+
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Layout umkehren</string>
+
+    <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Sperrbildschirm-Verknüpfungen</string>
+
+    <!-- Power Menu -->
+    <string name="powermenu_screenshot">Bildschirmfoto</string>
+    <string name="powermenu_screenrecord">Bildschirmaufnahme</string>
+    <string name="powermenu_power">Herunterfahren</string>
+    <string name="powermenu_restart">Neustart</string>
+    <string name="powermenu_restart_recovery">Erweiterter Neustart</string>
+    <string name="powermenu_airplane">Flugmodus</string>
+    <string name="powermenu_settings">Einstellungen</string>
+    <string name="powermenu_lockdown">Sperren</string>
+    <string name="powermenu_users">Benutzer</string>
+    <string name="powermenu_logout">Abmelden</string>
+    <string name="powermenu_torch">Taschenlampe</string>
+
+    <!-- Volume settings -->
+    <string name="hardware_keys_vol_key_title">Lautstärketaste</string>
+
+    <!-- Buttons backlight timeout -->
+    <string name="backlight_timeout_title">Timeout für die Hintergrundbeleuchtung der Tasten</string>
+    <string name="backlight_timeout_on">Immer aktiviert</string>
+    <string name="backlight_timeout_3s">3 Sek</string>
+    <string name="backlight_timeout_default">5 Sek (Standard)</string>
+    <string name="backlight_timeout_10s">10 Sek</string>
+    <string name="backlight_timeout_15s">15 Sek</string>
+    <string name="backlight_timeout_20s">20 Sek</string>
+    <string name="backlight_timeout_30s">30 Sek</string>
+
+    <!-- Enable keys backlight-->
+    <string name="button_brightness_title">Hintergrundbeleuchtung</string>
+    <!-- Enable keys backlight-->
+    <string name="button_brightness_sw_title">Hintergrundbeleuchtung aktivieren</string>
+    <string name="button_backlight_on_touch_only_title">Tastendruck</string>
+    <string name="button_backlight_on_touch_only_summary">Hintergrundbeleuchtung mit Timeout nur bei Tastendruck aktivieren</string>
+
+    <!-- HW Keys customization -->
+    <string name="picker_activities">Aktivitäten</string>
+    <string name="select_custom_app_title">Benutzerdefinierte App wählen</string>
+    <string name="select_custom_activity_title">Benutzerdefinierte Aktivität wählen</string>
+    <string name="profile_applist_title">Apps</string>
+    <string name="choose_action_title">Aktion wählen</string>
+    <string name="action_entry_default_action">Standardeinstellungen</string>
+    <string name="action_entry_select_app">App wählen</string>
+    <string name="action_entry_custom_action">Benutzerdefinierte Aktion auswählen</string>
+    <string name="hardware_keys_home_key_title">Home-Taste</string>
+    <string name="hardware_keys_menu_key_title">Menü-Taste</string>
+    <string name="hardware_keys_assist_key_title">Such-Taste</string>
+    <string name="hardware_keys_appswitch_key_title">Übersichts-Taste</string>
+    <string name="hardware_keys_back_key_title">Zurück-Taste</string>
+    <string name="hardware_keys_double_tap_summary">Aktion für doppeltes Tippen festlegen</string>
+    <string name="hardware_keys_single_tap_summary">Aktion für einfaches Tippen festlegen</string>
+    <string name="hardware_keys_long_press_summary">Aktion für langes Drücken einstellen</string>
+    <string name="hardware_keys_single_tap_title">Aktion für einfaches Tippen</string>
+    <string name="hardware_keys_long_press_title">Aktion für langes Drücken</string>
+    <string name="hardware_keys_double_tap_title">Aktion bei doppeltes Tippen</string>
+    <string name="hardware_keys_category">Hardwaretasten</string>
+    <string name="hardware_keys_disable_title">Geräte-Hardwaretasten deaktivieren</string>
+
+    <!-- ANBI -->
+    <string name="anbi_title">Versehentliches Berühren</string>
+    <string name="anbi_summary">Verhindert Interaktionen mit den Navigationstasten, während der Bildschirm berührt wird</string>
+
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Musikwiedergabe steuern</string>
+    <string name="volume_rocker_music_controls_summary">Lautstärketasten lang drücken, um Tracks zu wechseln, während der Bildschirm ausgeschaltet ist</string>
+
+    <!-- Volume rocker wake -->
+    <string name="volume_rocker_wake_title">Lautstärketaste zum Aufwecken</string>
+    <string name="volume_rocker_wake_summary">Drücken der Lautstärketaste beendet den Ruhezustand</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="hardware_keys_power_key_title">Ein-/Ausschalter</string>
+    <string name="torch_power_button_gesture_title">Taschenlampen-Funktion bei ausgeschaltetem Bildschirm</string>
+    <string name="torch_power_button_gesture_none">Ausgeschaltet</string>
+    <string name="torch_power_button_gesture_dt">Zum Einschalten der Taschenlampe Ein-/Aus-Taste doppelt drücken (kleine Verzögerung zum einfachem Tippen)</string>
+    <string name="torch_power_button_gesture_dt_toast">Die Geste für den Einsprung zur Kamera ist jetzt deaktiviert</string>
+    <string name="torch_power_button_gesture_lp">Ein-/Aus-Taste lange drücken zum Anschalten der Taschenlampe</string>
+
+    <!-- Wakeup options -->
+    <string name="wakeup_when_plugged_unplugged_title">Display beim Ladevorgang einschalten</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Display einschalten sobald Ladegerät angeschlossen/entfernt wird.</string>
+
+    <!-- Notifications & Battery light -->
+    <string name="light_category_title">LED-Optionen</string>
+    <string name="notification_light_settings">LED für Benachrichtigungen</string>
+    <string name="battery_light_settings">LED für Akkustand</string>
+    <string name="battery_light_enable">LED-Anzeige für den Akkustand aktivieren</string>
+    <string name="battery_light_allow_on_dnd_title">LED-Anzeige im Modus \"Nicht stören\"</string>
+    <string name="battery_light_low_blinking_title">Blinkende LED-Anzeige bei niedrigem Akkustand</string>
+    <string name="battery_light_cat">LED-Anzeige beim Aufladen</string>
+    <string name="battery_light_low_color">Niedriger Akkustand</string>
+    <string name="battery_light_medium_color">Mittlerer Akkustand</string>
+    <string name="battery_light_full_color">Fast voller Akkustand</string>
+    <string name="battery_light_reallyfull_color">Voller Akkustand</string>
+
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Vibrieren bei Fingerabdruck-Authentifizierung</string>
+    <string name="fprint_sucess_vib_summary">Bei erfolgreicher Fingerabdruck-Erkennung vibrieren</string>
+
+    <!-- Statusbar net monitor -->
+    <string name="network_traffic_state_title">Netzwerkmonitor</string>
+    <string name="network_traffic_location">Netzwerkaktivität anzeigen</string>
+    <string name="traffic_disabled">Aus</string>
+    <string name="traffic_statusbar">Statusbar</string>
+    <string name="traffic_expanded_statusbar">Erweiterte Statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Netzwerkaktivität anzeigen ab (KB/s)</string>
+    <string name="network_traffic_arrow">Richtungspfeile anzeigen</string>
+    <string name="network_traffic_arrow_summary">Richtungspfeile für Netzwerkaktivität anzeigen</string>
+    <string name="network_traffic_type">Anzeigemodus auswählen</string>
+    <string name="show_network_traffic_combined">Kombiniert (Upload + Download)</string>
+    <string name="show_network_traffic_dynamic">Dynamisch</string>
+    <string name="show_network_traffic_up">Upload</string>
+    <string name="show_network_traffic_down">Download</string>
+    <string name="show_network_traffic_all">Beides</string>
+    <string name="nettraf_font_size">Schriftgröße für einzeilige Anzeige</string>
+
+    <!-- Statusbar double tap to sleep -->
+    <string name="double_tap_to_sleep_title">Statusleiste 2x tippen für Ruhemodus</string>
+    <string name="double_tap_to_sleep_summary">Die Statusleiste zweimal antippen, um das Gerät in den Ruhemodus zu versetzen</string>
+    <!-- Lockscreen double tap to sleep -->
+    <string name="double_tap_sleep_lockscreen_title">Sperrbildschirm 2x tippen für Ruhemodus</string>
+    <string name="double_tap_sleep_lockscreen_summary">Zweimal irgendwo auf dem Sperrbildschirm tippen, um das Gerät in den Ruhemodus zu versetzen</string>
+
+    <!-- Disable power menu on secure lock screen -->
+    <string name="lockscreen_power_menu_disabled_title">Power-Menü auf dem Sperrbildschirm deaktivieren</string>
+    <string name="lockscreen_power_menu_disabled_summary">Diese Option deaktiviert das Power-Menü nur bei einer sicheren Displaysperre</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrieren bei Berührung</string>
+    <string name="quick_settings_vibrate_summary">Beim Berühren der Schaltflächen vibrieren</string>
+
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Gesicherte Kacheln müssen entsperrt werden</string>
+    <string name="qstile_requires_unlocking_summary">Die folgenden Schnellkacheln müssen entsperrt werden, bevor auf dem Sperrbildschirm darauf zugriffen werden kann: Flugmodus, Energiesparmodus, Bluetooth, Mobile Daten, Datensparmodus, NFC und WLAN.</string>
+
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Bildschirm-Navigationsleiste aktivieren</string>
+    <string name="disable_navkeys_summary">Diese Option schaltet zusätzlich die Bildschirm-Navigationsleiste ein</string>
+
+    <!-- Status bar - icons -->
+    <string name="status_bar_icons_title">Symbole in der Statusleiste</string>
+    <string name="status_bar_system_icons_title">Systemsymbole</string>
+    <string name="status_bar_system_icons_summary">Anzeige der Symbole in der Statusleiste anpassen</string>
+
+    <!-- Statusbar Clock -->
+    <string name="status_bar_clock_title">Uhr &amp; Datum</string>
+    <string name="status_bar_clock_show">Uhrzeit und Datum anzeigen</string>
+    <string name="status_bar_clock_style_title">Uhrzeit positionieren</string>
+    <string name="status_bar_clock_style_right">Rechts</string>
+    <string name="status_bar_clock_style_center">Mittig</string>
+    <string name="status_bar_clock_style_left">Links</string>
+    <string name="status_bar_am_pm_title">AM/PM-Darstellung</string>
+    <string name="status_bar_am_pm_info">24 Stunden-Format ist aktiviert</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Klein</string>
+    <string name="status_bar_am_pm_hidden">Nicht anzeigen (Standard)</string>
+    <string name="clock_seconds_display">Sekunden anzeigen</string>
+    <string name="clock_date_display">Datum</string>
+    <string name="clock_date_display_summary">Benutzerdefiniertes Datum vor der Uhrzeit anzeigen</string>
+    <string name="clock_date_display_none">Nicht anzeigen</string>
+    <string name="clock_date_display_small">Klein</string>
+    <string name="clock_date_display_normal">Normal</string>
+    <string name="clock_date_style">Datum Schriftstil</string>
+    <string name="clock_date_style_normal">Normal</string>
+    <string name="clock_date_style_lowercase">Kleinschreibung</string>
+    <string name="clock_date_style_uppercase">Großschreibung</string>
+    <string name="clock_date_format_custom">Benutzerdefiniertes Java-Format</string>
+    <string name="clock_date_format">Datumsformat</string>
+    <string name="clock_date_string_edittext_title">Eingabe nur im vorgegebenen Datumsformat möglich, z.B. MM/TT/JJ</string>
+    <string name="clock_date_string_edittext_summary">Zeichenfolge eingeben</string>
+    <string name="clock_date_right">Rechts neben der Uhrzeit</string>
+    <string name="clock_date_left">Links neben der Uhrzeit</string>
+    <string name="clock_date_position">Datumsanzeige positionieren</string>
+
+    <!-- Statusbar Clock Font Style & Size -->
+    <string name="status_bar_clock_font_style_title">Schriftstil</string>
+    <string name="status_bar_clock_font_size_title">Schriftgröße</string>
+
+    <!-- Lock Clock Fonts -->
+    <string name="lock_clock_font_title">Schriftstil der Uhranzeige</string>
+    <string name="lock_clock_font_summary">Den Standardschriftstil für das cLock-Widget ändern</string>
+    <string name="lock_clock_font_dialog_title">Schriftstil für das cLock-Widget auswählen</string>
+    <string name="lock_clock_font_stock">Normal</string>
+    <string name="lock_clock_font_bold">Fett</string>
+    <string name="lock_clock_font_italic">Kursiv</string>
+    <string name="lock_clock_font_bold_italic">Fett &amp; kursiv</string>
+    <string name="lock_clock_font_light_italic">Leicht &amp; kursiv</string>
+    <string name="lock_clock_font_thin_italic">Dünn &amp; kursiv</string>
+    <string name="lock_clock_font_light">Leicht (Standard)</string>
+    <string name="lock_clock_font_thin">Dünn</string>
+    <string name="lock_clock_font_condensed_normal">Schmal</string>
+    <string name="lock_clock_font_condensed_italic">Schmal &amp; kursiv</string>
+    <string name="lock_clock_font_condensed_bold">Schmal &amp; fett</string>
+    <string name="lock_clock_font_condensed_bold_italic">Schmal, fett &amp; kursiv</string>
+    <string name="lock_clock_font_condensed_light">Leicht &amp; schmal</string>
+    <string name="lock_clock_font_condensed_light_italic">Leicht &amp; schmal &amp; kursiv</string>
+    <string name="lock_clock_font_medium_normal">Mittel</string>
+    <string name="lock_clock_font_medium_italic">Medium &amp; kursiv</string>
+    <string name="lock_clock_font_black">Schwarz</string>
+    <string name="lock_clock_font_black_italic">Schwarz &amp; kursiv</string>
+    <string name="lock_clock_font_dancingscript">DancingScript</string>
+    <string name="lock_clock_font_dancingscript_bold">DancingScript fett</string>
+    <string name="lock_clock_font_comingsoon">ComingSoon</string>
+    <string name="lock_clock_font_notoserif">NotoSerif normal</string>
+    <string name="lock_clock_font_notoserif_italic">NotoSerif kursiv</string>
+    <string name="lock_clock_font_notoserif_bold">NotoSerif fett</string>
+    <string name="lock_clock_font_notoserif_bold_italic">NotoSerif fett &amp; kursiv</string>
+    <string name="lock_clock_font_gobold">GoBold leicht</string>
+    <string name="lock_clock_font_roadrage">Road Rage</string>
+    <string name="lock_clock_font_snowstorm">Snowstorm</string>
+    <string name="lock_clock_font_googlesans">Google Sans</string>
+    <string name="lock_clock_font_neoneon">Neoneon</string>
+    <string name="lock_clock_font_themeable">VCR OSD Mono</string>
+    <string name="lock_clock_font_samsung">Shamshung</string>
+    <string name="lock_clock_font_mexcellent">Mexcellent</string>
+    <string name="lock_clock_font_burnstown">Burnstown</string>
+    <string name="lock_clock_font_dumbledor">Dumbledor</string>
+    <string name="lock_clock_font_phantombold">PhantomBold</string>
+
+    <!-- Media art -->
+    <string name="lockscreen_media_category">Musik</string>
+    <string name="media_art_title">Albumcover</string>
+    <string name="media_art_summary">Albumcover auf dem Sperrbildschirm anzeigen</string>
+
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Unschärfepegel für Mediengrafiken</string>
+
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Lautstärkestufen</string>
+    <string name="volume_steps_alarm_title">Lautstärkestufen: Wecker</string>
+    <string name="volume_steps_dtmf_title">Lautstärkestufen: DTMF</string>
+    <string name="volume_steps_music_title">Lautstärkestufen: Musik</string>
+    <string name="volume_steps_notification_title">Lautstärkestufen: Benachrichtigung</string>
+    <string name="volume_steps_ring_title">Lautstärkestufen: Klingelton</string>
+    <string name="volume_steps_system_title">Lautstärkestufen: System</string>
+    <string name="volume_steps_voice_call_title">Lautstärkestufen: Sprachanruf</string>
+    <string name="volume_steps_reset">Zurücksetzen</string>
+
+
+    <!-- Battery Styles -->
+    <string name="battery_style_category_title">Akkustandanzeige</string>
+    <string name="battery_percent_title">Akku-Prozentsatz</string>
+
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Stil der Akkuanzeige</string>
+    <string name="status_bar_battery_style_q">Batterie (Standard)</string>
+    <string name="status_bar_battery_style_dotted_circle">Gepunkteter Kreis</string>
+    <string name="status_bar_battery_style_circle">Kreis</string>
+    <string name="status_bar_battery_style_text">Nur Prozentsatz</string>
+    <string name="status_bar_battery_style_hidden">Nicht anzeigen</string>
+
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Akku-Prozentsatz</string>
+    <string name="status_bar_battery_percentage_default">Nicht anzeigen (Standard)</string>
+    <string name="status_bar_battery_percentage_text_next">Neben dem Symbol</string>
+    <string name="status_bar_battery_percentage_text_inside">Im Symbol</string>
+    <string name="status_bar_battery_text_charging_title">Akku-Prozentsatz beim Laden</string>
+    <string name="status_bar_battery_text_charging_summary">Beim Laden immer den Akku-Prozentsatz anzeigen</string>
+
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Akku-Prozentsatz</string>
+    <string name="battery_percentage_off">Aus</string>
+    <string name="battery_percentage_next">Ein</string>
+    <string name="battery_percentage_inside">Ein (im Symbol)</string>
+    <string name="battery_percentage_estimate">Ein (Schätzung)</string>
+
+    <!-- QS clock -->
+    <string name="qs_clock_title">Uhrzeit</string>
+    <string name="qs_clock_summary">Uhrzeit in der Kopfzeile anzeigen, wenn die Schnelleinstellung heruntergezogen werden</string>
+
+    <!-- Quick pull down-->
+    <string name="quick_pulldown_title">Schnelles Herunterziehen der Schnelleinstellungen</string>
+    <string name="quick_pulldown_off">Aus</string>
+    <string name="quick_pulldown_left">Links</string>
+    <string name="quick_pulldown_right">Rechts</string>
+    <string name="quick_pulldown_always">Immer</string>
+
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_enable">Audio-Equalizer</string>
+    <string name="lockscreen_visualizer_enable_summary">Audio-Equalizer beim Abspielen von Musik anzeigen</string>
+    <string name="lockscreen_autocolor_title">Automatische Farbwahl</string>
+    <string name="lockscreen_autocolor_summary">Die Farbe wird mit dem Hintergrund des Sperrbildschirms abgestimmt</string>
+    <string name="lockscreen_autocolor_lavalamp">Lavalampe muss deaktiviert sein</string>
+    <string name="lockscreen_lavalamp_title">Lavalampe</string>
+    <string name="lockscreen_lavalamp_summary">Die Farbgebung der Equalizerbalken wird stufenlos überblendet</string>
+    <string name="lockscreen_lavalamp_speed_title">Geschwindigkeit des Farbwechsels</string>
+    <string name="lockscreen_solid_lines_category">Equalizerbalken</string>
+    <string name="lockscreen_solid_units_count_title">Anzahl Balken</string>
+    <string name="lockscreen_solid_fudge_factor_title">Höhe der Balken</string>
+    <string name="lockscreen_solid_units_opacity_title">Deckkraft der Balken</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Taschen-Erkennung</string>
+    <string name="pocket_judge_summary">Verhindert Bildschirminteraktionen, wenn sich das Gerät in einer Tasche befindet</string>
+
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_title">Helligkeitsregler</string>
+    <string name="qs_show_brightness_summary">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
+    <string name="qs_brightness_position_bottom_title">Helligkeitsregler unten</string>
+    <string name="qs_brightness_position_bottom_summary">Helligkeitsregler im unteren Bereich der Schnelleinstellungen anzeigen</string>
+    <string name="qs_show_auto_brightness_title">Automatische Helligkeitsregelung</string>
+    <string name="qs_show_auto_brightness_summary">Schaltfläche zur automatischen Helligkeitsregelung in der Nähe des Schiebereglers anzeigen</string>
+    <string name="qs_show_brightness_icon_title">Symbol für automatische Helligkeit</string>
+    <string name="qs_show_brightness_icon_summary">Das Symbol für die automatische Helligkeit wird rechts neben dem Helligkeitsregler angezeigt</string>
+    <string name="qs_show_brightness_minmax_title">Min/Max Schaltflächen</string>
+    <string name="qs_show_brightness_minmax_summary">Schaltflächen (-/+) zur Helligkeitssteuerung in der Nähe des Schiebereglers anzeigen</string>
+    <string name="qs_show_secure_title">Sicherheitsfußleiste</string>
+    <string name="qs_show_secure_summary">Bedingte Sicherheitsfußzeile anzeigen</string>
+
+    <!-- Rounded corners -->
+    <string name="corners_category_title">Abgerundete Ecken</string>
+    <string name="corners_category_summary">Eckenradius und Abstände einstellen</string>
+    <string name="corners_title">Abgerundete Ecken anpassen</string>
+    <string name="corner_radius">Radius der abgerundeten Ecken</string>
+    <string name="content_padding">Abstand zum Inhalt</string>
+    <string name="status_bar_padding">Abstand für Statusleiste</string>
+    <string name="corner_fwvals">Standardwerte verwenden</string>
+    <string name="unit_pixels">dp</string>
+
+    <!-- Ambient edge lighting -->
+    <string name="edge_lighting_category_title">Kantenbeleuchtung</string>
+    <string name="pulse_ambient_light_title">Ein</string>
+    <string name="pulse_ambient_light_summary">Kantenbeleuchtung beim Eingang von Benachrichtigungen anzeigen</string>
+    <string name="ambient_notification_light_enabled_title">Kantenbeleuchtung für AoD anzeigen</string>
+    <string name="ambient_notification_light_enabled_summary">Kantenbeleuchtung für AoD beim Eingang von Benachrichtigungen anzeigen</string>
+    <string name="ambient_notification_light_hide_aod_title">Inhalte des AoD verbergen</string>
+    <string name="ambient_notification_light_hide_aod_summary">Sämtliche Inhalte der AoD Ansicht verbergen während Kantenbeleuchtung an ist</string>
+    <string name="pulse_ambient_light_color_title">Kantenlichtfarbe</string>
+    <string name="ambient_notification_light_accent_title">Akzentfarbe für was auch immer verwenden</string>
+    <string name="ambient_notification_light_accent_summary">Es wird die Systemakzentfarbe anstelle der benutzerdefinierten Kantenlichtfarbe verwendet</string>
+    <string name="pulse_ambient_light_duration_title">Animationsdauer</string>
+    <string name="pulse_ambient_light_duration_summary">Legt die Animationsdauer für Kantenbeleuchtung fest</string>
+    <string name="pulse_ambient_light_duration_unit">Sek.</string>
+    <string name="applied_changes_edgelight">Damit die Kantenbeleuchtung funktioniert, wurden die Ambient-Weckgesten aktiviert.</string>
+    <string name="pulse_ambient_light_note">Bildschirmaktivierung beim Eingang neuer Benachrichtigungen muss eingeschaltet sein</string>
+    <string name="pulse_ambient_light_repeat_count_title">Wiederholungszahl</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Die maximale Wiederholungszahl einstellen. 0 für unendlich</string>
+    <string name="pulse_ambient_light_pulse_for_all_title">Pulsieren für alle Doze-Ereignisse</string>
+    <string name="pulse_ambient_light_pulse_for_all_summary">Pulsieren für alle Doze-Ereignisse und nicht nur für Benachrichtigungen einschalten</string>
+
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">Ambient Display: Helligkeit einstellen</string>
+    <string name="ambient_pulse_brightness_title">Helligkeit beim Eingang von Benachrichtigungen</string>
+    <string name="ambient_pulse_brightness_summary">Helligkeit einstellen, die für das Ambient Display verwendet wird, wenn eine Benachrichtigung eingeht</string>
+    <string name="ambient_doze_brightness_title">Helligkeit des Ambient Display</string>
+    <string name="ambient_doze_brightness_summary">Helligkeit einstellen, die allgemein für das Ambient Display verwendet wird</string>
+
+    <string name="lockscreen_misc_category">Verschiedenes</string>
+    <string name="lockscreen_items_category">Sperrbildschirmelemente</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_charging_current_title">Zusatzinfo zum Ladevorgang</string>
+    <string name="lockscreen_charging_current_summary">Die vom System ermittelte Ladespannung, Stromstärke und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
+
+    <!-- Motion Sense -->
+    <string name="aware_settings_title">Motion Sense</string>
+    <string name="aware_settings_summary">Motion Sense-Optionen konfigurieren</string>
+    <string name="ambient_display_wake_screen_summary">Um nach der Uhrzeit, Benachrichtigungen und andere Informationen zu sehen, greifen Sie nach dem Telefon</string>
+    <string name="ambient_display_wake_screen_summary_on">An</string>
+    <string name="aware_category_display">Ambient Display</string>
+    <string name="aware_category_gesture">Schnellgesten</string>
+    <string name="aware_disabled_preference_action">Motion Sense Einstellungen</string>
+    <string name="aware_disabled_preference_dialog_content">Um diese Funktion zu verwenden, aktivieren Sie Motion Sense</string>
+    <string name="aware_disabled_preference_dialog_title">Diese Funktion ist deaktiviert</string>
+    <string name="aware_disabled_preference_neutral">Nicht jetzt</string>
+    <string name="aware_display_settings_title">Leerlaufsperrbildschirm</string>
+    <string name="aware_settings_description">Mithilfe der neuen Sensoren kann das Pixel Entfernungen und Bewegungen um das Gerät herum erkennen</string>
+    <string name="aware_settings_disabled_info_dialog_content">Motion Sense-Funktionen wie Schnellgesten, Bildschirm bei Annäherung einschalten und Nach dem Telefon greifen werden in diesem Land nicht unterstützt</string>
+    <string name="aware_settings_disabled_info_dialog_title">Motion Sense ist aus</string>
+    <string name="aware_settings_enabled_info_dialog_content">Motion Sense-Funktionen wie Schnellgesten, Bildschirm bei Annäherung einschalten und Nach dem Telefon greifen werden in diesem Land unterstützt</string>
+    <string name="aware_settings_enabled_info_dialog_title">Motion Sense ist an</string>
+    <string name="aware_wake_display_summary">Uhrzeit, Benachrichtigungssymbole und andere Informationen anzeigen, wenn Sie sich in der Nähe befinden</string>
+    <string name="aware_wake_display_summary_aod_off">Nicht verfügbar, da AoD nicht eingeschaltet ist</string>
+    <string name="aware_wake_display_title">Bildschirm einschalten bei Annäherung</string>
+    <string name="dialog_aware_settings_message">Wenn Sie Motion Sense deaktivieren, können Schnellgesten, Bildschirm bei Annäherung einschalten und Nach dem Telefon greifen nicht verwendet werden</string>
+    <string name="dialog_aware_settings_title">Motion Sense ausschalten?</string>
+    <string name="gesture_aware_confirmation_action_button">verstanden</string>
+    <string name="gesture_aware_disabled_info_dialog_content">Schnellgesten und weitere Motion Sense-Funktionen werden in diesem Land nicht unterstützt.</string>
+    <string name="gesture_aware_off_dialog_content">Um Schnellgesten zu verwenden, muss Motion Sense eingeschaltet sein.</string>
+    <string name="gesture_aware_off_dialog_title">Schnellgesten sind aus</string>
+    <string name="gesture_silence_on_summary">Ein / Alarme schlummern lassen und Anrufe stummschalten</string>
+    <string name="gesture_silence_summary">Alarme schlummern lassen und Anrufe stummschalten</string>
+    <string name="gesture_silence_title">Störungen leise schalten</string>
+    <string name="gesture_skip_direction_ltr">Um zum nächsten Titel zu wechseln von links nach rechts wischen</string>
+    <string name="gesture_skip_direction_rtl">Um zum nächsten Titel zu wechseln von rechts nach links wischen</string>
+    <string name="gesture_skip_direction_title">Wischrichtung</string>
+    <string name="gesture_skip_on_summary">On / Zum nächsten oder vorherigen Titel springen</string>
+    <string name="gesture_skip_summary">Zum nächsten oder vorherigen Titel springen</string>
+    <string name="gesture_skip_title">Songtitel überspringen</string>
+    <string name="wake_screen_aware_disabled_info_dialog_content"> Nach dem Telefon greifen und weitere Motion Sense-Funktionen werden in diesem Land nicht unterstützt</string>
+    <string name="wake_screen_aware_off_dialog_content">Um Nach dem Telefon greifen zu verwenden, muss Motion Sense eingeschaltet sein.</string>
+    <string name="wake_screen_aware_off_dialog_title">Nach dem Telefon greifen ist aus</string>
+
+    <!-- Active edge -->
+    <string name="active_edge_title">Active Edge</string>
+    <string name="active_edge_summary">Active Edge-Optionen konfigurieren</string>
+    <string name="active_edge_short_actions_title">Aktion bei kurzem Zusammendrücken</string>
+    <string name="active_edge_long_actions_title">Aktion bei langem Zusammendrücken</string>
+    <string name="active_edge_sensitivity_title">Druckstärke</string>
+    <string name="active_edge_wake_title">Bei deaktiviertem Bildschirm zulassen</string>
+    <string name="active_edge_wake_summary">Die eingestellte Aktion auch bei deaktiviertem Bildschirm auslösen</string>
+    <string name="active_edge_footer_info">Nicht alle Aktionen, die in Active Edge zur Verfügung stehen, sind in der Lage den Bildschirm einzuschalten und bleiben daher bei ausgeschaltetem Bildschirm ohne Wirkung.</string>
+    <string name="active_edge_ss_app_select_title">App bei kurzem Zusammendrücken auswählen</string>
+    <string name="active_edge_ls_app_select_title">App bei langem Zusammendrücken auswählen</string>
+    <string name="active_edge_app_select_summary">App auswählen, die bei der Zusammendrücken-Aktion gestartet werden soll</string>
+
+    <!-- Custom actions -->
+    <string name="action_nothing">Keine Aktion</string>
+    <string name="action_search">Google Assistant</string>
+    <string name="action_voice_search">Sprachsuche</string>
+    <string name="action_launch_camera">Kamera</string>
+    <string name="action_flashlight">Taschenlampe</string>
+    <string name="action_clear_notifications">Benachrichtigungen löschen</string>
+    <string name="action_volume_panel">Lautstärkeregelung</string>
+    <string name="action_screen_off">Ruhezustand</string>
+    <string name="action_notifications">Benachrichtigungen</string>
+    <string name="action_screenshot">Bildschirmfoto</string>
+    <string name="action_screenrecord">Bildschirmaufnahme</string>
+    <string name="action_qs_panel">Schnelleinstellungen</string>
+    <string name="action_app_action">Anwendung</string>
+    <string name="action_splitscreen_action">Geteilter Bildschirm</string>
+    <string name="action_lastapp_action">Letzte App</string>
+    <string name="action_medianext_action">Zum nächsten Track</string>
+    <string name="action_mediaplay_action">Track abspielen/pausieren</string>
+    <string name="action_ringer_modes">Ruftonmodus</string>
+
+</resources>

@@ -95,7 +95,7 @@
             android:defaultValue="2"
             android:max="10"
             settings:min="1"
-            settings:units="sec"
+            settings:units="@string/pulse_ambient_light_duration_unit"
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
 

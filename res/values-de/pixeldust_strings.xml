@@ -58,6 +58,8 @@
     <!-- Enable navbar -->
     <string name="enable_navbar_title">Aktivieren</string>
     <string name="enable_navbar_summary">Steuert, ob die Navigationsleiste angezeigt wird</string>
+    <string name="navigation_bar_arrow_keys_title">Cursortasten während der Eingabe anzeigen</string>
+    <string name="navigation_bar_arrow_keys_summary">Während der Eingabe wird jeweils links und rechts eine Cursortaste in der Navigationsleiste angezeigt</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Sperrbildschirm-Verknüpfungen</string>

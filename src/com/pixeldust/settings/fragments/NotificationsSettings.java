@@ -50,8 +50,8 @@ import java.util.List;
 public class NotificationsSettings extends SettingsPreferenceFragment
                          implements OnPreferenceChangeListener, Indexable {
 
-    private static final String AMBIENT_NOTIFICATION_LIGHT_ACCENT = "ambient_notification_light_accent";
-    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+    private static final String NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
+    private static final String NOTIFICATION_PULSE = "pulse_ambient_light";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
@@ -81,15 +81,15 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             prefScreen.removePreference(LightOptions);
         }
 
-        mEdgeLightPreference = (SwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
+        mEdgeLightPreference = (SwitchPreference) findPreference(NOTIFICATION_PULSE);
         boolean mEdgeLightOn = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT, 0) == 1;
+                Settings.System.NOTIFICATION_PULSE, 0) == 1;
         mEdgeLightPreference.setChecked(mEdgeLightOn);
         mEdgeLightPreference.setOnPreferenceChangeListener(this);
 
-        mEdgeLightAccentColorPreference = (SwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT_ACCENT);
+        mEdgeLightAccentColorPreference = (SwitchPreference) findPreference(NOTIFICATION_PULSE_ACCENT);
         boolean mEdgeLightAccentOn = Settings.System.getInt(getContentResolver(),
-                Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0) == 1;
+                Settings.System.NOTIFICATION_PULSE_ACCENT, 0) == 1;
         mEdgeLightAccentColorPreference.setChecked(mEdgeLightAccentOn);
         mEdgeLightAccentColorPreference.setOnPreferenceChangeListener(this);
 
@@ -130,13 +130,13 @@ public class NotificationsSettings extends SettingsPreferenceFragment
 
         mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
         int value = Settings.System.getInt(getContentResolver(),
-                Settings.System.OMNI_PULSE_BRIGHTNESS, defaultPulse);
+                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
         mPulseBrightness.setValue(value);
         mPulseBrightness.setOnPreferenceChangeListener(this);
 
         mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
         value = Settings.System.getInt(getContentResolver(),
-                Settings.System.OMNI_DOZE_BRIGHTNESS, defaultDoze);
+                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
     }
@@ -147,7 +147,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         if (preference == mEdgeLightPreference) {
             boolean isOn = (Boolean) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.PULSE_AMBIENT_LIGHT, isOn ? 1 : 0);
+                    Settings.System.NOTIFICATION_PULSE, isOn ? 1 : 0);
             // if edge light is enabled, switch off AOD and switch on Ambient wake gestures
             if (isOn) {
                 Settings.System.putInt(resolver, Settings.System.AMBIENT_WAKE_GESTURES, 1);
@@ -158,7 +158,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         } else if (preference == mEdgeLightAccentColorPreference) {
             boolean isOn = (Boolean) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACCENT, isOn ? 1 : 0);
+                    Settings.System.NOTIFICATION_PULSE_ACCENT, isOn ? 1 : 0);
             mEdgeLightAccentColorPreference.setChecked(isOn);
             updateEdgeLightColorPreferences(isOn);
             return true;
@@ -188,12 +188,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         } else if (preference == mPulseBrightness) {
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
-                  Settings.System.OMNI_PULSE_BRIGHTNESS, value);
+                  Settings.System.PULSE_BRIGHTNESS, value);
             return true;
         } else if (preference == mDozeBrightness) {
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
-                  Settings.System.OMNI_DOZE_BRIGHTNESS, value);
+                  Settings.System.DOZE_BRIGHTNESS, value);
             return true;
         }
         return false;

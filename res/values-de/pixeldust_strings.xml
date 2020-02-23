@@ -487,4 +487,16 @@
     <string name="action_mediaplay_action">Track abspielen/pausieren</string>
     <string name="action_ringer_modes">Ruftonmodus</string>
 
+    <!-- AoD notification pulse timeout option -->
+    <string name="ambient_notification_light_timeout_title">Timeout for light pulse</string>
+    <string name="entry_infinite">Unendlich</string>
+    <string name="entry_thirty_seconds">30 Sekunden</string>
+    <string name="entry_one_minute">1 Minute</string>
+    <string name="entry_two_minute">2 Minuten</string>
+    <string name="entry_five_minute">5 Minuten</string>
+    <string name="entry_ten_minute">10 Minuten</string>
+    <string name="entry_fifteen_minute">15 Minuten</string>
+    <string name="entry_thirty_minute">30 Minuten</string>
+    <string name="entry_sixty_minute">60 Minuten</string>
+
 </resources>

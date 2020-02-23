@@ -55,7 +55,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private static final String NOTIFICATION_PULSE = "pulse_ambient_light";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
-    private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
@@ -69,7 +68,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mTextColor;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
-    private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mPulseTimeout;
 
     @Override
@@ -116,12 +114,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment
         int duration = Settings.System.getInt(getContentResolver(),
                 Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
         mEdgeLightDurationPreference.setValue(duration);
-
-        mEdgeLightRepeatCountPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_REPEAT_COUNT);
-        mEdgeLightRepeatCountPreference.setOnPreferenceChangeListener(this);
-        int rCount = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0);
-        mEdgeLightRepeatCountPreference.setValue(rCount);
 
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
@@ -190,11 +182,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
-            return true;
-        } else if (preference == mEdgeLightRepeatCountPreference) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, value);
             return true;
         } else if (preference == mPulseBrightness) {
             int value = (Integer) newValue;

@@ -397,6 +397,9 @@
     <string name="ambient_notification_light_color_mode_automatic">Farbton der Benachrichtigung</string>
     <string name="ambient_notification_light_color_mode_accent">Systemakzentfarbe</string>
     <string name="ambient_notification_light_color_mode_custom">Benutzerdefinierte Farbe</string>
+    <string name="pulse_ambient_light_layout_title">Kantenlichtansicht</string>
+    <string name="pulse_ambient_light_layout_solid">Voll</string>
+    <string name="pulse_ambient_light_layout_faded">Verblasst</string>
 
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Ambient Display: Helligkeit einstellen</string>

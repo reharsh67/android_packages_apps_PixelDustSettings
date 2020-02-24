@@ -409,6 +409,9 @@
     <string name="ambient_notification_light_color_mode_automatic">Notification color</string>
     <string name="ambient_notification_light_color_mode_accent">System accent color</string>
     <string name="ambient_notification_light_color_mode_custom">Custom color</string>
+    <string name="pulse_ambient_light_layout_title">Edge Light View</string>
+    <string name="pulse_ambient_light_layout_solid">Solid</string>
+    <string name="pulse_ambient_light_layout_faded">Faded</string>
 
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze Brightness Config</string>

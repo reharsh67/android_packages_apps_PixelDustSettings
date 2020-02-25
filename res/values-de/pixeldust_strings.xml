@@ -389,17 +389,17 @@
     <string name="ambient_notification_light_hide_aod_title">Inhalte des AoD verbergen</string>
     <string name="ambient_notification_light_hide_aod_summary">Sämtliche Inhalte der AoD Ansicht verbergen während Kantenbeleuchtung an ist</string>
     <string name="pulse_ambient_light_color_title">Kantenlichtfarbe</string>
-    <string name="ambient_notification_light_accent_title">Akzentfarbe für was auch immer verwenden</string>
-    <string name="ambient_notification_light_accent_summary">Es wird die Systemakzentfarbe anstelle der benutzerdefinierten Kantenlichtfarbe verwendet</string>
     <string name="pulse_ambient_light_duration_title">Animationsdauer</string>
     <string name="pulse_ambient_light_duration_summary">Legt die Animationsdauer für Kantenbeleuchtung fest</string>
     <string name="pulse_ambient_light_duration_unit">Sek.</string>
     <string name="applied_changes_edgelight">Damit die Kantenbeleuchtung funktioniert, wurden die Ambient-Weckgesten aktiviert.</string>
     <string name="pulse_ambient_light_note">Bildschirmaktivierung beim Eingang neuer Benachrichtigungen muss eingeschaltet sein</string>
-    <string name="pulse_ambient_light_repeat_count_title">Wiederholungszahl</string>
-    <string name="pulse_ambient_light_repeat_count_summary">Die maximale Wiederholungszahl einstellen. 0 für unendlich</string>
     <string name="pulse_ambient_light_pulse_for_all_title">Pulsieren für alle Doze-Ereignisse</string>
     <string name="pulse_ambient_light_pulse_for_all_summary">Pulsieren für alle Doze-Ereignisse und nicht nur für Benachrichtigungen einschalten</string>
+    <string name="ambient_notification_light_color_mode_title">Farbe des Lichtimpulses</string>
+    <string name="ambient_notification_light_color_mode_automatic">Farbton der Benachrichtigung</string>
+    <string name="ambient_notification_light_color_mode_accent">Systemakzentfarbe</string>
+    <string name="ambient_notification_light_color_mode_custom">Benutzerdefinierte Farbe</string>
 
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Ambient Display: Helligkeit einstellen</string>

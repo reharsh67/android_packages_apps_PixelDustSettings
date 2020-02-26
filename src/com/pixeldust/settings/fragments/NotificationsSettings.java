@@ -162,11 +162,14 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             boolean isOn = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.NOTIFICATION_PULSE, isOn ? 1 : 0);
-            // if edge light is enabled, switch off AOD and switch on Ambient wake gestures
+            // if edge light is enabled, switch on Ambient wake gestures
             if (isOn) {
                 Settings.System.putInt(resolver, Settings.System.AMBIENT_WAKE_GESTURES, 1);
                 Toast.makeText(getContext(), R.string.applied_changes_edgelight,
                         Toast.LENGTH_LONG).show();
+            } else { // else turn off all edge light settings (e.g. edge light on aod)
+                Settings.System.putInt(resolver, Settings.System.PULSE_AMBIENT_LIGHT_PULSE_FOR_ALL, 0);
+                Settings.System.putInt(resolver, Settings.System.AOD_NOTIFICATION_PULSE, 0);
             }
             return true;
         } else if (preference == mEdgeLightColorPreference) {

@@ -69,6 +69,8 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private ListPreference mPulseTimeout;
     private ListPreference mColorMode;
+    private SwitchPreference mEdgeLightPulseForAllPreference;
+    private SwitchPreference mEdgeLightAodPreference;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -153,6 +155,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment
 
         // Update the edge light preference and preview accordingly
         updateEdgeLightColorPreferences(value);
+
+        // Determine controls that may need to be deactivated 
+        mEdgeLightPulseForAllPreference = (SwitchPreference) findPreference("pulse_ambient_light_pulse_for_all");
+        mEdgeLightAodPreference = (SwitchPreference) findPreference("ambient_notification_light_enabled");
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -168,7 +175,9 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                 Toast.makeText(getContext(), R.string.applied_changes_edgelight,
                         Toast.LENGTH_LONG).show();
             } else { // else turn off all edge light settings (e.g. edge light on aod)
+                mEdgeLightPulseForAllPreference.setChecked(false);
                 Settings.System.putInt(resolver, Settings.System.PULSE_AMBIENT_LIGHT_PULSE_FOR_ALL, 0);
+                mEdgeLightAodPreference.setChecked(false);
                 Settings.System.putInt(resolver, Settings.System.AOD_NOTIFICATION_PULSE, 0);
             }
             return true;

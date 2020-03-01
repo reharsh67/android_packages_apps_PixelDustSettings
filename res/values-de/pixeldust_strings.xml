@@ -491,6 +491,7 @@
     <string name="action_medianext_action">Zum nächsten Track</string>
     <string name="action_mediaplay_action">Track abspielen/pausieren</string>
     <string name="action_ringer_modes">Ruftonmodus</string>
+    <string name="kill_app">Schliesse die Vordergrund-App</string>
 
     <!-- AoD notification pulse timeout option -->
     <string name="ambient_notification_light_timeout_title">Timeout for light pulse</string>

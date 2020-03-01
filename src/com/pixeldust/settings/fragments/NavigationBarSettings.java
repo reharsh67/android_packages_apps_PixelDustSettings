@@ -33,6 +33,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionUtils;
+import com.android.internal.util.pixeldust.PixeldustUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -46,8 +47,15 @@ import java.util.List;
 public class NavigationBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
+    private static final String LAYOUT_SETTINGS = "layout_settings";
+    private static final String NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
+    private static final String NAVIGATION_BAR_INVERSE = "sysui_nav_bar_inverse";
 
     private SwitchPreference mEnableNavigationBar;
+    private Preference mLayoutSettings;
+    private SwitchPreference mNavigationArrows;
+    private SwitchPreference mSwapNavButtons;
+
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
 
@@ -68,6 +76,18 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
             updateNavBarOption();
         } else {
             prefScreen.removePreference(mEnableNavigationBar);
+        }
+
+        mLayoutSettings = (Preference) findPreference(LAYOUT_SETTINGS);
+        mSwapNavButtons = (SwitchPreference) findPreference(NAVIGATION_BAR_INVERSE);
+        if (!PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            prefScreen.removePreference(mLayoutSettings);
+            prefScreen.removePreference(mSwapNavButtons);
+        }
+
+        mNavigationArrows = (SwitchPreference) findPreference(NAVIGATION_BAR_ARROWS);
+        if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_nopill")) {
+            prefScreen.removePreference(mNavigationArrows);
         }
     }
 

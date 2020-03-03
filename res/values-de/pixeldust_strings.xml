@@ -457,9 +457,13 @@
     <string name="gesture_skip_direction_ltr">Um zum nächsten Titel zu wechseln von links nach rechts wischen</string>
     <string name="gesture_skip_direction_rtl">Um zum nächsten Titel zu wechseln von rechts nach links wischen</string>
     <string name="gesture_skip_direction_title">Wischrichtung</string>
-    <string name="gesture_skip_on_summary">On / Zum nächsten oder vorherigen Titel springen</string>
+    <string name="gesture_skip_on_summary">Ein / Zum nächsten oder vorherigen Titel springen</string>
     <string name="gesture_skip_summary">Zum nächsten oder vorherigen Titel springen</string>
     <string name="gesture_skip_title">Songtitel überspringen</string>
+    <string name="gesture_tap_off_summary">Aus / Audiowiedergabe anhalten oder fortsetzen</string>
+    <string name="gesture_tap_on_summary">Ein / Audiowiedergabe anhalten oder fortsetzen</string>
+    <string name="gesture_tap_summary">Audiowiedergabe anhalten oder fortsetzen, indem du über dem Telefon in die Luft tippst</string>
+    <string name="gesture_tap_title">Audiowiedergabe anhalten</string>
     <string name="wake_screen_aware_disabled_info_dialog_content"> Nach dem Telefon greifen und weitere Motion Sense-Funktionen werden in diesem Land nicht unterstützt</string>
     <string name="wake_screen_aware_off_dialog_content">Um Nach dem Telefon greifen zu verwenden, muss Motion Sense eingeschaltet sein.</string>
     <string name="wake_screen_aware_off_dialog_title">Nach dem Telefon greifen ist aus</string>

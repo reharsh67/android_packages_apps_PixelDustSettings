@@ -83,13 +83,13 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         mLayoutSettings = (Preference) findPreference(LAYOUT_SETTINGS);
         mSwapNavButtons = (SwitchPreference) findPreference(NAVIGATION_BAR_INVERSE);
         if (!PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
-            prefScreen.removePreference(mLayoutSettings);
-            prefScreen.removePreference(mSwapNavButtons);
+            if (mLayoutSettings != null) prefScreen.removePreference(mLayoutSettings);
+            if (mSwapNavButtons != null) prefScreen.removePreference(mSwapNavButtons);
         }
 
         mNavigationArrows = (SwitchPreference) findPreference(NAVIGATION_BAR_ARROWS);
         if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_nopill")) {
-            prefScreen.removePreference(mNavigationArrows);
+            if (mNavigationArrows != null) prefScreen.removePreference(mNavigationArrows);
         }
 
         mGestureSystemNavigation = (Preference) findPreference(GESTURE_SYSTEM_NAVIGATION);

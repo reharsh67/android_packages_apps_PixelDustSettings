@@ -48,7 +48,6 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
 
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
-    private static final String NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
 
@@ -87,17 +86,12 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
             if (mSwapNavButtons != null) prefScreen.removePreference(mSwapNavButtons);
         }
 
-        mNavigationArrows = (SwitchPreference) findPreference(NAVIGATION_BAR_ARROWS);
-        if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_nopill")) {
-            if (mNavigationArrows != null) prefScreen.removePreference(mNavigationArrows);
-        }
-
         mGestureSystemNavigation = (Preference) findPreference(GESTURE_SYSTEM_NAVIGATION);
         if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
         } else if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
-        } else {
+        } else { // Navbar gestural mode
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
         }
     }

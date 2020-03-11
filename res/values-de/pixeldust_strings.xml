@@ -518,4 +518,10 @@
     <string name="lockscreen_charging_animation_explosion">Explosion</string>
     <string name="lockscreen_charging_animation_water">Wasser</string>
 
+    <!-- Gesture navbar handle -->
+    <string name="gesture_navbar_handle_title">Größe der Gestenleiste</string>
+    <string name="gesture_navbar_handle_default">Standard</string>
+    <string name="gesture_navbar_handle_middle">Medium</string>
+    <string name="gesture_navbar_handle_large">Groß</string>
+
 </resources>

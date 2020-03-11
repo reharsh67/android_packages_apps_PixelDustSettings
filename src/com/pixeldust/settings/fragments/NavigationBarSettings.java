@@ -50,12 +50,14 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
+    private static final String KEY_GESTURE_BAR_SIZE = "navigation_handle_width";
 
     private SwitchPreference mEnableNavigationBar;
     private Preference mLayoutSettings;
     private SwitchPreference mNavigationArrows;
     private SwitchPreference mSwapNavButtons;
     private Preference mGestureSystemNavigation;
+    private ListPreference mGestureBarSize;
 
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
@@ -66,6 +68,13 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.pixeldust_settings_navigation);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mGestureBarSize = (ListPreference) findPreference(KEY_GESTURE_BAR_SIZE);
+        int gesturebarsize = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.NAVIGATION_HANDLE_WIDTH, 0, UserHandle.USER_CURRENT);
+        mGestureBarSize.setValue(String.valueOf(gesturebarsize));
+        mGestureBarSize.setSummary(mGestureBarSize.getEntry());
+        mGestureBarSize.setOnPreferenceChangeListener(this);
 
         // Navigation bar related options
         mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
@@ -89,8 +98,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         mGestureSystemNavigation = (Preference) findPreference(GESTURE_SYSTEM_NAVIGATION);
         if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
+            prefScreen.removePreference(mGestureBarSize);
         } else if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
+            prefScreen.removePreference(mGestureBarSize);
         } else { // Navbar gestural mode
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
         }
@@ -115,6 +126,12 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
                     mIsNavSwitchingMode = false;
                 }
             }, 1000);
+            return true;
+        } else if (preference == mGestureBarSize) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_HANDLE_WIDTH, value,
+                    UserHandle.USER_CURRENT);
             return true;
         }
         return false;

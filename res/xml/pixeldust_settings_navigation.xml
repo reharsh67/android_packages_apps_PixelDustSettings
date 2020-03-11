@@ -61,4 +61,11 @@
         android:dependency="enable_nav_bar"
         android:defaultValue="true" />
 
+    <ListPreference
+        android:key="navigation_handle_width"
+        android:title="@string/gesture_navbar_handle_title"
+        android:entries="@array/gesture_navbar_handle_entries"
+        android:entryValues="@array/gesture_navbar_handle_values"
+        android:dependency="enable_nav_bar" />
+
 </PreferenceScreen>

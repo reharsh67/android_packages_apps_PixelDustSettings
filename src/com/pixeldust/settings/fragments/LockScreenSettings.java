@@ -52,7 +52,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+    private static final String LOCKSCREEN_CHARGING_ANIMATION = "lockscreen_charging_animation_style";
 
+    private Preference mChargingAnimation;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
@@ -74,6 +76,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
             mFingerprintVib.setOnPreferenceChangeListener(this);
+        }
+
+        mChargingAnimation = (Preference) findPreference(LOCKSCREEN_CHARGING_ANIMATION);
+        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+            // Devices with Active Edge inherit SystemUIGoogle and therefore do not support the Charging Animation feature
+            prefScreen.removePreference(mChargingAnimation);
         }
 
         mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);

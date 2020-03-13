@@ -325,6 +325,8 @@
     <string name="status_bar_battery_percentage_text_inside">Im Symbol</string>
     <string name="status_bar_battery_text_charging_title">Akku-Prozentsatz beim Laden</string>
     <string name="status_bar_battery_text_charging_summary">Beim Laden immer den Akku-Prozentsatz anzeigen</string>
+    <string name="status_bar_battery_bolt_charging_title">Blitz-Symbol beim Laden</string>
+    <string name="status_bar_battery_bolt_charging_summary">Beim Laden immer ein Blitz-Symbol vor dem Akku-Prozentsatz anzeigen</string>
 
     <!-- Battery percent -->
     <string name="battery_percentage_title">Akku-Prozentsatz</string>

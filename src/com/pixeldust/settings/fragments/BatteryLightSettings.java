@@ -37,7 +37,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.pixeldust.settings.preferences.SystemSettingSwitchPreference;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.pixeldust.support.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.List;

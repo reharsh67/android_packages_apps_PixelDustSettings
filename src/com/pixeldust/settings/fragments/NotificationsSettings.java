@@ -42,7 +42,7 @@ import com.pixeldust.settings.preferences.CustomSeekBarPreference;
 import com.pixeldust.settings.preferences.SystemSettingSeekBarPreference;
 import com.pixeldust.settings.preferences.AmbientLightSettingsPreview;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.pixeldust.support.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.List;

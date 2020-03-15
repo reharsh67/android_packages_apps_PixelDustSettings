@@ -29,18 +29,23 @@
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
         </Preference>
 
+        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_charging_current_title"
+            android:summary="@string/lockscreen_charging_current_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_charging_animation" >
+
         <com.pixeldust.settings.preferences.SystemSettingListPreference
             android:key="lockscreen_charging_animation_style"
             android:title="@string/lockscreen_charging_animation_title"
             android:entries="@array/lockscreen_charging_animation_entries"
             android:entryValues="@array/lockscreen_charging_animation_values"
             android:defaultValue="1" />
-
-        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_battery_info"
-            android:title="@string/lockscreen_charging_current_title"
-            android:summary="@string/lockscreen_charging_current_summary"
-            android:defaultValue="false" />
 
     </PreferenceCategory>
 

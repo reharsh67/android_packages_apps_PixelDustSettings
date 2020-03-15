@@ -52,9 +52,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
-    private static final String LOCKSCREEN_CHARGING_ANIMATION = "lockscreen_charging_animation_style";
+    private static final String LOCKSCREEN_CHARGING_ANIMATION = "lockscreen_charging_animation";
 
-    private Preference mChargingAnimation;
+    private PreferenceCategory mChargingAnimation;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
@@ -78,8 +78,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFingerprintVib.setOnPreferenceChangeListener(this);
         }
 
-        mChargingAnimation = (Preference) findPreference(LOCKSCREEN_CHARGING_ANIMATION);
-        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+        mChargingAnimation = (PreferenceCategory) findPreference(LOCKSCREEN_CHARGING_ANIMATION);
+        if (getResources().getBoolean(R.bool.has_active_edge)) {
             // Devices with Active Edge inherit SystemUIGoogle and therefore do not support the Charging Animation feature
             prefScreen.removePreference(mChargingAnimation);
         }

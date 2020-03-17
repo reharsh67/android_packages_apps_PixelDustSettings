@@ -17,9 +17,11 @@ package com.pixeldust.settings.fragments;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.om.IOverlayManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.os.ServiceManager;
 import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -36,6 +38,7 @@ import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.internal.util.pixeldust.PixeldustUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.gestures.SystemNavigationGestureSettings;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
@@ -71,7 +74,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
 
         mGestureBarSize = (ListPreference) findPreference(KEY_GESTURE_BAR_SIZE);
         int gesturebarsize = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.NAVIGATION_HANDLE_WIDTH, 0, UserHandle.USER_CURRENT);
+                Settings.System.NAVIGATION_HANDLE_WIDTH, 1, UserHandle.USER_CURRENT);
         mGestureBarSize.setValue(String.valueOf(gesturebarsize));
         mGestureBarSize.setSummary(mGestureBarSize.getEntry());
         mGestureBarSize.setOnPreferenceChangeListener(this);
@@ -132,6 +135,11 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_HANDLE_WIDTH, value,
                     UserHandle.USER_CURRENT);
+            int index = mGestureBarSize.findIndexOfValue((String) newValue);
+            mGestureBarSize.setSummary(mGestureBarSize.getEntries()[index]);
+            SystemNavigationGestureSettings.setBackSensivityOverlay(true);
+            SystemNavigationGestureSettings.setCurrentSystemNavigationMode(getActivity(),
+                    getOverlayManager(), SystemNavigationGestureSettings.getCurrentSystemNavigationMode(getActivity()));
             return true;
         }
         return false;
@@ -146,6 +154,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
         mEnableNavigationBar.setChecked(enabled);
+    }
+
+    private IOverlayManager getOverlayManager() {
+        return IOverlayManager.Stub.asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
     }
 
     @Override

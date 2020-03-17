@@ -520,6 +520,7 @@
 
     <!-- Gesture navbar handle -->
     <string name="gesture_navbar_handle_title">Größe der Gestenleiste</string>
+    <string name="gesture_navbar_handle_hidden">Verborgen</string>
     <string name="gesture_navbar_handle_default">Standard</string>
     <string name="gesture_navbar_handle_middle">Medium</string>
     <string name="gesture_navbar_handle_large">Groß</string>

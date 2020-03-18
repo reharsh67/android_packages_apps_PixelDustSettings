@@ -54,6 +54,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
     private static final String KEY_GESTURE_BAR_SIZE = "navigation_handle_width";
+    private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
 
     private SwitchPreference mEnableNavigationBar;
     private Preference mLayoutSettings;
@@ -61,6 +62,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mSwapNavButtons;
     private Preference mGestureSystemNavigation;
     private ListPreference mGestureBarSize;
+    private SwitchPreference mPixelNavAnimation;
 
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
@@ -99,6 +101,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         }
 
         mGestureSystemNavigation = (Preference) findPreference(GESTURE_SYSTEM_NAVIGATION);
+        mPixelNavAnimation = (SwitchPreference) findPreference(PIXEL_NAV_ANIMATION);
         if (PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
             prefScreen.removePreference(mGestureBarSize);
@@ -107,6 +110,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mGestureBarSize);
         } else { // Navbar gestural mode
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
+            prefScreen.removePreference(mPixelNavAnimation);
         }
     }
 

@@ -490,7 +490,7 @@
     <string name="kill_app">Schliesse die Vordergrund-App</string>
 
     <!-- AoD notification pulse timeout option -->
-    <string name="ambient_notification_light_timeout_title">Timeout for light pulse</string>
+    <string name="ambient_notification_light_timeout_title">Timeout für Kantenbeleuchtung</string>
     <string name="entry_infinite">Unendlich</string>
     <string name="entry_thirty_seconds">30 Sekunden</string>
     <string name="entry_one_minute">1 Minute</string>

@@ -155,8 +155,9 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateNavBarOption() {
+        boolean defaultToNavigationBar = PixeldustUtils.deviceSupportNavigationBar(getActivity());
         boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
+                Settings.System.FORCE_SHOW_NAVBAR, defaultToNavigationBar ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mEnableNavigationBar.setChecked(enabled);
     }
 

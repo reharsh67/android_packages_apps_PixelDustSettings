@@ -97,7 +97,6 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         mSwapNavButtons = (SwitchPreference) findPreference(NAVIGATION_BAR_INVERSE);
         if (!PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             if (mLayoutSettings != null) prefScreen.removePreference(mLayoutSettings);
-            if (mSwapNavButtons != null) prefScreen.removePreference(mSwapNavButtons);
         }
 
         mGestureSystemNavigation = (Preference) findPreference(GESTURE_SYSTEM_NAVIGATION);
@@ -111,6 +110,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
         } else { // Navbar gestural mode
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
             prefScreen.removePreference(mPixelNavAnimation);
+            if (mSwapNavButtons != null) prefScreen.removePreference(mSwapNavButtons);
         }
     }
 

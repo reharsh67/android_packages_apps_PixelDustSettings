@@ -308,6 +308,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         } else if (preference == mClockFontStyle) {
             int showClockFont = Integer.valueOf((String) objValue);
             int index = mClockFontStyle.findIndexOfValue((String) objValue);
+            if (showClockFont == 0) {
+                // Force clock font reset when the user chooses the 'default' style
+                Settings.System.putInt(getContentResolver(), Settings.System.
+                    STATUS_BAR_CLOCK_FONT_RESET, 1);
+            }
             Settings.System.putInt(getContentResolver(), Settings.System.
                 STATUS_BAR_CLOCK_FONT_STYLE, showClockFont);
             mClockFontStyle.setSummary(mClockFontStyle.getEntries()[index]);

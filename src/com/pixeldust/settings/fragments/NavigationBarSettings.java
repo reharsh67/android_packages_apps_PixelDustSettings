@@ -76,7 +76,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
 
         mGestureBarSize = (ListPreference) findPreference(KEY_GESTURE_BAR_SIZE);
         int gesturebarsize = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.NAVIGATION_HANDLE_WIDTH, 1, UserHandle.USER_CURRENT);
+                Settings.System.NAVIGATION_HANDLE_WIDTH, 2, UserHandle.USER_CURRENT);
         mGestureBarSize.setValue(String.valueOf(gesturebarsize));
         mGestureBarSize.setSummary(mGestureBarSize.getEntry());
         mGestureBarSize.setOnPreferenceChangeListener(this);

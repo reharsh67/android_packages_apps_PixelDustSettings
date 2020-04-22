@@ -18,12 +18,19 @@
     android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <Preference
+        android:key="gesture_system_navigation"
+        android:title="@string/system_navigation_title"
+        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
+
     <PreferenceCategory
         android:key="alternative_recents_category"
         android:title="@string/alternative_recents_category">
 
     <Preference
-        android:key="swipe_up_enabled_warning"
+        android:key="three_buttons_disabled_warning"
         android:selectable="false"
         android:summary="@string/alternative_recents_swipe_up_enabled_warning_summary" />
 
@@ -31,7 +38,9 @@
         android:key="use_slim_recents"
         android:fragment="com.pixeldust.settings.fragments.SlimRecents"
         android:title="@string/slim_recents_fragment_title"
-        android:summary="@string/slim_recents_fragment_summary"/>
+        android:summary="@string/slim_recents_fragment_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
 
     </PreferenceCategory>
 

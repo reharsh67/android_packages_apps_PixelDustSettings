@@ -99,6 +99,12 @@
             android:summary="@string/ambient_notification_light_hide_aod_summary"
             android:dependency="ambient_notification_light_enabled"
             android:defaultValue="false" />
+       
+        <com.pixeldust.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_headers"
+            android:title="@string/notification_headers_title"
+            android:summary="@string/notification_headers_summary"
+            android:defaultValue="true" />
 
         <ListPreference
             android:key="ambient_notification_light_timeout"

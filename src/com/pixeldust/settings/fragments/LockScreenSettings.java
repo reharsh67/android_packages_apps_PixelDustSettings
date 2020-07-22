@@ -41,9 +41,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.pixeldust.settings.preferences.SecureSettingMasterSwitchPreference;
-import com.pixeldust.settings.preferences.SystemSettingSwitchPreference;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,15 +49,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
-    private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String LOCKSCREEN_CHARGING_ANIMATION = "lockscreen_charging_animation";
-    private static final String AMBIENT_VISUALIZER_ENABLED = "ambient_visualizer_enabled";
 
     private PreferenceCategory mChargingAnimation;
-    private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
-    private SystemSettingSwitchPreference mAmbientVisualizerEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -68,7 +61,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.pixeldust_settings_lockscreen);
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
@@ -86,15 +78,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             // Devices with Active Edge inherit SystemUIGoogle and therefore do not support the Charging Animation feature
             prefScreen.removePreference(mChargingAnimation);
         }
-
-        mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
-        mVisualizerEnabled.setOnPreferenceChangeListener(this);
-        int visualizerEnabled = Settings.Secure.getInt(resolver,
-                LOCKSCREEN_VISUALIZER_ENABLED, 0);
-        mVisualizerEnabled.setChecked(visualizerEnabled != 0);
-
-        mAmbientVisualizerEnabled = (SystemSettingSwitchPreference) findPreference(AMBIENT_VISUALIZER_ENABLED);
-        updateAmbientVisualizer(visualizerEnabled == 1);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -104,21 +87,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
             return true;
-        } else if (preference == mVisualizerEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(),
-                    LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
-            updateAmbientVisualizer(value);
-            return true;
         }
         return false;
-    }
-
-    private void updateAmbientVisualizer(boolean value) {
-        if (!value) {
-            mAmbientVisualizerEnabled.setChecked(false);
-        }
-        mAmbientVisualizerEnabled.setEnabled(value);
     }
 
     @Override

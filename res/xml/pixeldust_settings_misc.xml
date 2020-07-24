@@ -50,6 +50,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="volume_panel_stuff"
+        android:title="@string/volume_panel">
+
+        <com.pixeldust.settings.preferences.SystemSettingListPreference
+            android:key="systemui_plugin_volume"
+            android:title="@string/volume_panel"
+            android:entries="@array/volume_panel_entries"
+            android:entryValues="@array/volume_panel_values"
+            android:defaultValue="@string/volume_panel_aosp_val" />
+
+    </PreferenceCategory>
+
     <!-- Disable device identifier restrictions -->
     <com.pixeldust.settings.preferences.GlobalSettingSwitchPreference
         android:key="privileged_device_identifier_check_relaxed"

@@ -693,4 +693,12 @@
     <string name="pulse_filled_block_size">Blockgröße</string>
     <string name="pulse_empty_block_size">Blockabstände</string>
 
+    <!--  Volume Panel Plugin   -->
+    <string name="volume_panel">Volume Panel UI-Stil</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_aospa">AOSPA</string>
+    <string name="volume_panel_compat">Kompakt</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Gekachelt</string>
+
 </resources>

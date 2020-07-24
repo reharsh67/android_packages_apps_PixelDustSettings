@@ -660,6 +660,12 @@
     <string name="notification_headers_title">Show notification headers</string>
     <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
     
+    <string name="co_potatoproject_plugin_volume_layout_title">To change volume style</string>
+    <string name="co_potatoproject_plugin_volume_layout_aosp">Aosp</string>
+    <string name="co_potatoproject_plugin_volume_layout_compact">Compact</string>
+    <string name="co_potatoproject_plugin_volume_layout_oreo">Oreo</string>
+    <string name="co_potatoproject_plugin_volume_layout_tiled">tiled</string>
+    
     <!-- Pulse -->
     <string name="pulse_help_policy_notice_summary">Pulse does not work with some audio sources when listening on device speaker</string>
     <string name="pulse_settings">Pulse</string>

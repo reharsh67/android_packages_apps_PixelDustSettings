@@ -36,6 +36,7 @@ import androidx.preference.SwitchPreference;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
+import com.android.internal.util.pixeldust.PixeldustUtils;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -111,7 +112,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             prefScreen.removePreference(mDisableNavigationKeys);
         }
 
-        final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
+        final boolean needsNavbar = PixeldustUtils.deviceSupportNavigationBarForUser(getActivity(), UserHandle.USER_CURRENT);
         final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
                 .findPreference(CATEGORY_HWKEY);
         int keysDisabled = 0;
